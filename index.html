@@ -1,0 +1,728 @@
+<title>Franquia Publicarga</title>
+<meta name="description" content="Franquia de totens carregadores com mídia indoor da Publicarga." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#000000;
+    --surface:#0b0c0e;
+    --surface-2:#141619;
+    --line:rgba(255,255,255,.10);
+    --line-strong:rgba(255,255,255,.18);
+    --ink:#ffffff;
+    --muted:#a4a7ad;
+    --muted-2:#7d8087;
+    --brand:#ff7800;
+    --brand-2:#ff9a3d;
+    --brand-ink:#180a00;
+    --volt:#00ff03;
+    --volt-dim:rgba(0,255,3,.12);
+    --ok:#00ff03;
+
+    --display:"Bricolage Grotesque",system-ui,sans-serif;
+    --body:"Manrope",system-ui,sans-serif;
+
+    --wrap:1160px;
+    --r:16px;
+    --r-lg:26px;
+    color-scheme:dark;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:var(--display);font-weight:800;line-height:1.05;margin:0;text-wrap:balance;letter-spacing:-.02em}
+  p{margin:0}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  ::selection{background:var(--brand);color:var(--brand-ink)}
+
+  .wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:20px}
+  .section{padding-block:96px}
+  .eyebrow{
+    font-family:var(--body);font-weight:800;font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--volt);display:inline-flex;align-items:center;gap:8px;margin:0 0 16px;
+  }
+  .eyebrow::before{content:"";width:22px;height:2px;background:var(--volt);box-shadow:0 0 10px var(--volt)}
+  .center{text-align:center}
+  .center .eyebrow{justify-content:center}
+  h2.big{font-size:clamp(30px,5vw,52px)}
+  .lead{color:var(--muted);font-size:clamp(16px,2vw,19px);max-width:60ch}
+  .center .lead{margin-inline:auto}
+  .accent{color:var(--brand)}
+
+  /* buttons */
+  .btn{
+    --_bg:var(--brand);--_fg:var(--brand-ink);
+    display:inline-flex;align-items:center;gap:10px;justify-content:center;
+    font-family:var(--body);font-weight:800;font-size:15px;letter-spacing:.01em;
+    padding:15px 24px;border-radius:999px;border:0;cursor:pointer;
+    background:var(--_bg);color:var(--_fg);transition:transform .15s ease,box-shadow .2s ease,background .2s ease;
+    box-shadow:0 8px 30px -8px rgba(255,120,0,.6);
+  }
+  .btn .arw{transition:transform .15s ease}
+  .btn:hover{transform:translateY(-2px)}
+  .btn:hover .arw{transform:translateX(4px)}
+  .btn:focus-visible{outline:3px solid var(--volt);outline-offset:3px}
+  .btn.ghost{--_bg:transparent;--_fg:var(--ink);border:1px solid var(--line-strong);box-shadow:none}
+  .btn.ghost:hover{border-color:var(--brand);color:var(--brand)}
+  .btn.block{width:100%}
+
+  .sec-cta{margin-top:40px;display:flex;justify-content:center}
+
+  /* header */
+  header.site{
+    position:sticky;top:env(safe-area-inset-top,0px);z-index:60;
+    backdrop-filter:blur(14px);background:rgba(0,0,0,.55);border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;gap:22px;height:66px}
+  .brand{display:flex;align-items:center;gap:9px;font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:-.03em}
+  .brand .bolt{color:var(--volt);filter:drop-shadow(0 0 6px var(--volt))}
+  .nav-links{display:flex;gap:26px;margin-left:auto;font-weight:600;font-size:14px;color:var(--muted)}
+  .nav-links a:hover{color:var(--ink)}
+  .nav .btn{padding:11px 18px;font-size:14px}
+  .nav-cta{margin-left:auto;display:flex;align-items:center;gap:12px}
+  .nav-links + .nav-cta{margin-left:0}
+  @media(max-width:900px){.nav-links{display:none}.nav-cta{margin-left:auto}}
+
+  /* hero */
+  .hero{position:relative;overflow:hidden;padding-block:70px 90px}
+  .hero::before{
+    content:"";position:absolute;inset:-20% -10% auto -10%;height:70%;
+    background:radial-gradient(60% 100% at 70% 20%,rgba(255,120,0,.22),transparent 60%),
+               radial-gradient(45% 80% at 15% 0%,rgba(0,255,3,.10),transparent 60%);
+    filter:blur(10px);z-index:0;pointer-events:none;
+  }
+  .hero .grid{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+  .badge{
+    display:inline-flex;align-items:center;gap:9px;padding:7px 14px;border:1px solid var(--line-strong);
+    border-radius:999px;font-size:12.5px;font-weight:700;color:var(--muted);margin-bottom:22px;background:rgba(255,255,255,.02)
+  }
+  .badge .dot{width:8px;height:8px;border-radius:50%;background:var(--volt);box-shadow:0 0 10px var(--volt)}
+  .hero h1{font-size:clamp(38px,6vw,68px)}
+  .hero .lead{margin-top:22px}
+  .price{
+    margin-top:26px;padding:16px 20px;border:1px solid var(--line);border-left:3px solid var(--brand);
+    border-radius:12px;background:var(--surface);font-weight:600;color:var(--muted);font-size:15px
+  }
+  .price b{color:var(--ink);font-weight:800}
+  .price .todef{color:var(--brand)}
+  .pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+  .pills span{
+    font-size:13px;font-weight:700;color:var(--ink);padding:9px 15px;border-radius:999px;
+    border:1px solid var(--line-strong);background:rgba(255,255,255,.02)
+  }
+  .pills span::before{content:"⚡";margin-right:7px;color:var(--volt)}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+  .hero-trust{display:flex;align-items:center;gap:12px;margin-top:30px;color:var(--muted);font-size:14px}
+  .hero-trust b{color:var(--ink)}
+
+  /* totem illustration */
+  .totem-c{display:flex;justify-content:center;align-items:center}
+  .totem-c svg{width:min(360px,90%);height:auto;filter:drop-shadow(0 30px 60px rgba(0,0,0,.6))}
+
+  /* stats */
+  .stats{border-block:1px solid var(--line);background:var(--surface)}
+  .stats .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding-block:44px;text-align:center}
+  .stat .num{font-family:var(--display);font-weight:800;font-size:clamp(34px,5vw,52px);color:var(--brand);font-variant-numeric:tabular-nums;letter-spacing:-.03em}
+  .stat .lbl{color:var(--muted);font-size:14px;font-weight:600;margin-top:6px}
+  @media(max-width:720px){.stats .grid{grid-template-columns:1fr;gap:30px}}
+
+  /* generic cards */
+  .cards{display:grid;gap:22px;margin-top:44px}
+  .cols-2{grid-template-columns:1fr 1fr}
+  .cols-3{grid-template-columns:repeat(3,1fr)}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:30px}
+  .card .ic{
+    width:48px;height:48px;border-radius:14px;display:grid;place-items:center;margin-bottom:18px;
+    background:var(--volt-dim);color:var(--volt);border:1px solid rgba(0,255,3,.25)
+  }
+  .card.brand .ic{background:rgba(255,120,0,.14);color:var(--brand);border-color:rgba(255,120,0,.3)}
+  .card h3{font-size:21px;margin-bottom:10px}
+  .card p{color:var(--muted);font-size:15px}
+  @media(max-width:820px){.cols-2,.cols-3{grid-template-columns:1fr}}
+
+  /* pillars (numbered — real sequence of what franchisee does) */
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px;counter-reset:p}
+  .pillar{border:1px solid var(--line);border-radius:var(--r);padding:28px;background:linear-gradient(180deg,var(--surface),transparent)}
+  .pillar .n{font-family:var(--display);font-weight:800;font-size:15px;color:var(--brand);letter-spacing:.1em}
+  .pillar h3{font-size:20px;margin:14px 0 8px}
+  .pillar p{color:var(--muted);font-size:15px}
+  @media(max-width:820px){.pillars{grid-template-columns:1fr}}
+
+  /* calculator */
+  .calc{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:44px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:34px}
+  .calc .field{margin-bottom:24px}
+  .calc label{display:flex;justify-content:space-between;font-weight:700;font-size:14px;margin-bottom:10px}
+  .calc label b{color:var(--brand);font-variant-numeric:tabular-nums}
+  .calc input[type=range]{width:100%;accent-color:var(--brand);height:6px}
+  .calc .hint{color:var(--muted-2);font-size:12.5px;margin-top:8px}
+  .calc-out{background:#000;border:1px solid var(--line-strong);border-radius:var(--r);padding:28px;display:flex;flex-direction:column;justify-content:center;gap:18px}
+  .calc-out .row{display:flex;justify-content:space-between;align-items:baseline}
+  .calc-out .row span{color:var(--muted);font-size:14px;font-weight:600}
+  .calc-out .row b{font-family:var(--display);font-weight:800;font-variant-numeric:tabular-nums}
+  .calc-out .big{font-size:clamp(30px,4vw,44px);color:var(--volt);text-shadow:0 0 18px rgba(0,255,3,.35)}
+  .calc-out .mid{font-size:22px}
+  .disc{color:var(--muted-2);font-size:12px;margin-top:18px;text-align:center}
+  @media(max-width:820px){.calc{grid-template-columns:1fr;padding:24px}}
+
+  /* marquee */
+  .marquee{overflow:hidden;margin-top:40px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+  .track{display:flex;gap:16px;width:max-content;animation:scroll 32s linear infinite}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+  .amb{
+    width:230px;height:150px;border-radius:var(--r);border:1px solid var(--line);flex:0 0 auto;
+    display:flex;align-items:flex-end;padding:16px;font-weight:800;font-family:var(--display);
+    background:linear-gradient(180deg,var(--surface-2),#000)
+  }
+  .amb span{background:rgba(0,0,0,.4);padding:4px 10px;border-radius:8px;border:1px solid var(--line)}
+  @media(prefers-reduced-motion:reduce){.track{animation:none}}
+
+  /* video cards */
+  .videos{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+  .vcard{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);aspect-ratio:9/12;background:radial-gradient(120% 80% at 50% 0%,var(--surface-2),#000);display:flex;align-items:flex-end;padding:22px}
+  .vcard .play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;box-shadow:0 10px 30px -6px rgba(255,120,0,.7);transition:transform .15s}
+  .vcard:hover .play{transform:translate(-50%,-50%) scale(1.08)}
+  .vcard .cap{font-weight:700;font-size:14px;position:relative;z-index:1}
+  .vcard .cap small{display:block;color:var(--muted);font-weight:600}
+  .video-hero{margin-top:40px;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);position:relative;aspect-ratio:16/9;background:radial-gradient(120% 120% at 50% 0%,var(--surface-2),#000);display:grid;place-items:center}
+  .video-hero .play{width:84px;height:84px;border-radius:50%;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;box-shadow:0 12px 40px -6px rgba(255,120,0,.7)}
+  .video-hero .lbl{position:absolute;bottom:20px;left:22px;font-weight:700;font-size:14px}
+  @media(max-width:820px){.videos{grid-template-columns:1fr}}
+
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
+  .step{border:1px solid var(--line);border-radius:var(--r);padding:24px;background:var(--surface);position:relative}
+  .step .n{font-family:var(--display);font-weight:800;color:var(--brand);font-size:14px;letter-spacing:.1em}
+  .step h4{font-size:17px;margin:12px 0 8px}
+  .step p{color:var(--muted);font-size:14px}
+  @media(max-width:820px){.steps{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.steps{grid-template-columns:1fr}}
+
+  /* fit */
+  .fit{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:44px}
+  .fit .box{border:1px solid var(--line);border-radius:var(--r-lg);padding:30px;background:var(--surface)}
+  .fit .box.no{border-color:rgba(255,255,255,.06);background:#08090a}
+  .fit h3{font-size:20px;margin-bottom:18px}
+  .fit ul{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+  .fit li{display:flex;gap:12px;color:var(--muted);font-size:15px}
+  .fit .mk{flex:0 0 auto;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:14px}
+  .fit .yes .mk{background:var(--volt-dim);color:var(--volt);border:1px solid rgba(0,255,3,.3)}
+  .fit .no .mk{background:rgba(255,255,255,.05);color:var(--muted-2);border:1px solid var(--line)}
+  @media(max-width:820px){.fit{grid-template-columns:1fr}}
+
+  /* faq */
+  .faq{max-width:820px;margin:44px auto 0;display:grid;gap:12px}
+  details{border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+  details summary{list-style:none;cursor:pointer;padding:20px 22px;font-weight:700;font-size:16px;display:flex;justify-content:space-between;gap:16px;align-items:center}
+  details summary::-webkit-details-marker{display:none}
+  details summary .ico{color:var(--brand);font-size:22px;transition:transform .2s;flex:0 0 auto}
+  details[open] summary .ico{transform:rotate(45deg)}
+  details .body{padding:0 22px 22px;color:var(--muted);font-size:15px}
+
+  /* form */
+  .formsec{background:linear-gradient(180deg,#000,var(--surface))}
+  .fcard{border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;display:grid;grid-template-columns:1fr 1fr;background:var(--surface)}
+  .fcard .info{padding:44px;background:radial-gradient(120% 90% at 0% 0%,rgba(255,120,0,.14),transparent 55%)}
+  .fcard .info h2{font-size:clamp(26px,3.5vw,38px);margin-bottom:16px}
+  .fcard .info p{color:var(--muted)}
+  .chip{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--volt);margin-bottom:16px}
+  .chip .blink{width:8px;height:8px;border-radius:50%;background:var(--volt);box-shadow:0 0 10px var(--volt);animation:blink 1.4s infinite}
+  @keyframes blink{50%{opacity:.3}}
+  @media(prefers-reduced-motion:reduce){.chip .blink{animation:none}}
+  form{padding:44px;display:grid;gap:16px}
+  .field{display:grid;gap:7px}
+  .field label{font-weight:700;font-size:13.5px}
+  .field input,.field select{
+    background:#000;border:1px solid var(--line-strong);border-radius:11px;padding:13px 14px;color:var(--ink);
+    font-family:var(--body);font-size:15px;width:100%
+  }
+  .field input:focus,.field select:focus{outline:2px solid var(--brand);outline-offset:1px;border-color:var(--brand)}
+  .field .err{color:#ff6b5e;font-size:12.5px;display:none}
+  .field.invalid .err{display:block}
+  .field.invalid input,.field.invalid select{border-color:#ff6b5e}
+  .privacy{color:var(--muted-2);font-size:12px;text-align:center}
+  .success{padding:44px;text-align:center;display:grid;gap:14px;place-items:center}
+  .success .ok{width:64px;height:64px;border-radius:50%;background:var(--volt-dim);color:var(--volt);display:grid;place-items:center;border:1px solid rgba(0,255,3,.3)}
+  .success h3{font-size:24px}
+  .success p{color:var(--muted);max-width:42ch}
+  .success .todef{font-size:12px;color:var(--brand);border:1px dashed rgba(255,120,0,.4);padding:6px 12px;border-radius:8px}
+  @media(max-width:820px){.fcard{grid-template-columns:1fr}.fcard .info,form,.success{padding:30px}}
+
+  /* footer */
+  footer.site{border-top:1px solid var(--line);padding-block:56px 40px;background:#000}
+  .fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+  footer .brand{margin-bottom:14px}
+  footer p{color:var(--muted);font-size:14px;max-width:42ch}
+  footer h5{font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted-2);margin:0 0 14px}
+  footer .col a{display:block;color:var(--muted);font-size:14px;margin-bottom:10px}
+  footer .col a:hover{color:var(--ink)}
+  .flegal{color:var(--muted-2);font-size:12px;margin-top:36px;border-top:1px solid var(--line);padding-top:24px}
+  @media(max-width:820px){.fgrid{grid-template-columns:1fr}}
+
+  .legal{color:var(--muted-2);font-size:12.5px;margin-top:24px;max-width:80ch}
+
+  /* sticky mobile cta */
+  .sticky{position:fixed;left:0;right:0;bottom:0;z-index:70;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));background:rgba(0,0,0,.8);backdrop-filter:blur(12px);border-top:1px solid var(--line);display:none}
+  .sticky .btn{width:100%}
+  @media(max-width:900px){.sticky{display:block}body{padding-bottom:82px}}
+
+  .hero-in{opacity:0;transform:translateY(14px);animation:in .7s cubic-bezier(.2,.7,.2,1) forwards}
+  .d1{animation-delay:.08s}.d2{animation-delay:.16s}.d3{animation-delay:.24s}.d4{animation-delay:.32s}
+  @keyframes in{to{opacity:1;transform:none}}
+  @media(prefers-reduced-motion:reduce){.hero-in{opacity:1;transform:none;animation:none}}
+</style>
+
+<!-- ============ HEADER ============ -->
+<header class="site">
+  <div class="wrap nav">
+    <a href="#top" class="brand"><span class="bolt">⚡</span>Publicarga</a>
+    <nav class="nav-links">
+      <a href="#modelo">O modelo</a>
+      <a href="#pratica">Na prática</a>
+      <a href="#calculadora">Simulação</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#form" class="btn">Receber apresentação <span class="arw">→</span></a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap grid">
+    <div>
+      <span class="badge hero-in"><span class="dot"></span> Rede em expansão · +60 unidades operando</span>
+      <h1 class="hero-in d1">Tenha sua franquia de <span class="accent">totens carregadores</span>. As marcas pagam, as telas são suas.</h1>
+      <p class="lead hero-in d2">Você instala totens que <b style="color:#fff">carregam celulares de graça</b> e exibem <b style="color:#fff">publicidade em vídeo</b> em pontos de grande circulação. Um negócio enxuto, remoto e com o suporte completo da franqueadora.</p>
+
+      <div class="price hero-in d2">Investimento <span class="todef">[valor a definir]</span> · potencial de faturamento <span class="todef">[a definir]</span> — condições completas na Circular de Oferta de Franquia (COF).</div>
+
+      <div class="pills hero-in d3">
+        <span>Sem funcionários</span>
+        <span>Sem estoque</span>
+        <span>Gestão 100% remota</span>
+      </div>
+
+      <div class="hero-ctas hero-in d3">
+        <a href="#form" class="btn">Quero receber a apresentação <span class="arw">→</span></a>
+        <a href="#modelo" class="btn ghost">Como funciona</a>
+      </div>
+
+      <div class="hero-trust hero-in d4">
+        <span class="dot" style="width:9px;height:9px;border-radius:50%;background:var(--volt);box-shadow:0 0 10px var(--volt)"></span>
+        <span><b>+60 unidades</b> operando pelo Brasil — e crescendo.</span>
+      </div>
+    </div>
+
+    <div class="totem-c hero-in d2" aria-hidden="true">
+      <!-- Totem carregador estilizado (ilustração) -->
+      <svg viewBox="0 0 240 400" role="img" aria-label="Totem carregador Publicarga">
+        <defs>
+          <linearGradient id="scr" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ff7800"/><stop offset="1" stop-color="#ff9a3d"/>
+          </linearGradient>
+          <linearGradient id="body" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#1c1e22"/><stop offset="1" stop-color="#0a0b0d"/>
+          </linearGradient>
+        </defs>
+        <ellipse cx="120" cy="386" rx="86" ry="12" fill="#000" opacity=".6"/>
+        <rect x="46" y="18" width="148" height="356" rx="20" fill="url(#body)" stroke="#2a2d33"/>
+        <rect x="60" y="34" width="120" height="196" rx="10" fill="url(#scr)"/>
+        <rect x="72" y="150" width="96" height="12" rx="6" fill="#000" opacity=".22"/>
+        <rect x="72" y="170" width="66" height="10" rx="5" fill="#000" opacity=".22"/>
+        <circle cx="120" cy="96" r="30" fill="#000" opacity=".18"/>
+        <path d="M126 78l-16 26h14l-4 22 18-30h-14z" fill="#fff"/>
+        <rect x="60" y="250" width="120" height="104" rx="10" fill="#000" stroke="#26292f"/>
+        <rect x="74" y="266" width="92" height="8" rx="4" fill="#2a2d33"/>
+        <rect x="74" y="284" width="70" height="8" rx="4" fill="#2a2d33"/>
+        <g stroke="#00ff03" stroke-width="3" opacity=".9">
+          <rect x="78" y="312" width="26" height="30" rx="4" fill="none"/>
+          <rect x="112" y="312" width="26" height="30" rx="4" fill="none"/>
+          <rect x="146" y="312" width="18" height="30" rx="4" fill="none"/>
+        </g>
+        <circle cx="120" cy="330" r="52" fill="#00ff03" opacity=".05"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VÍDEO INSTITUCIONAL ============ -->
+<section class="section" id="video">
+  <div class="wrap center">
+    <span class="eyebrow">Veja funcionando</span>
+    <h2 class="big">Entenda o modelo <span class="accent">em minutos</span>.</h2>
+    <a class="video-hero" href="https://www.youtube.com/watch?v=obCb1jnXzbs" target="_blank" rel="noopener" aria-label="Assistir vídeo institucional Publicarga">
+      <div class="play" aria-hidden="true">▶</div>
+      <span class="lbl">Vídeo institucional Publicarga →</span>
+    </a>
+    <div class="sec-cta"><a href="#form" class="btn">Quero receber a apresentação <span class="arw">→</span></a></div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="stats">
+  <div class="wrap grid stats">
+    <div class="grid" style="grid-template-columns:repeat(3,1fr)">
+      <div class="stat"><div class="num" data-count="60" data-prefix="+">+60</div><div class="lbl">Unidades operando</div></div>
+      <div class="stat"><div class="num" data-count="100" data-suffix="%">100%</div><div class="lbl">Gestão remota</div></div>
+      <div class="stat"><div class="num">0</div><div class="lbl">Funcionários e estoque</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MECANISMO ============ -->
+<section class="section" id="modelo">
+  <div class="wrap center">
+    <span class="eyebrow">Modelo comprovado</span>
+    <h2 class="big">Você ganha <span class="accent">vendendo anúncio</span>.</h2>
+    <p class="lead">Você posiciona os totens nos pontos de maior circulação — academias, bares, clínicas, universidades. A receita vem de uma fonte: marcas pagam para anunciar nas suas telas. O carregamento e o Wi-Fi gratuitos são o atrativo que enche o ponto de gente e faz o estabelecimento querer o seu totem.</p>
+  </div>
+  <div class="wrap">
+    <div class="cards cols-2">
+      <article class="card brand">
+        <div class="ic">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="13" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M7 12l3-3 2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Marcas pagam pelas suas telas</h3>
+        <p>A cada totem, uma vitrine de mídia indoor. Anunciantes locais e nacionais pagam para exibir vídeo nas telas — receita recorrente que é sua.</p>
+      </article>
+      <article class="card">
+        <div class="ic">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="7" y="2" width="10" height="20" rx="2.5" stroke="currentColor" stroke-width="2"/><path d="M12.8 7.5l-2.3 4h3l-2.3 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>O atrativo que abre as portas</h3>
+        <p>Carregar o celular de graça lota o ponto de movimento e faz os estabelecimentos disputarem o seu totem. É esse fluxo que valoriza as suas telas.</p>
+      </article>
+    </div>
+    <p class="legal">Os resultados variam conforme localização, gestão e condições de mercado e não constituem promessa de rentabilidade. Informações completas na Circular de Oferta de Franquia (COF).</p>
+    <div class="sec-cta"><a href="#form" class="btn">Quero receber a apresentação <span class="arw">→</span></a></div>
+  </div>
+</section>
+
+<!-- ============ NA PRÁTICA ============ -->
+<section class="section" id="pratica" style="background:var(--surface);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <span class="eyebrow">Na prática</span>
+    <h2 class="big">O que você faz, de verdade, <span class="accent">como franqueado</span>.</h2>
+    <p class="lead" style="margin-top:14px">Poucas horas por semana, três frentes simples — com o método e os materiais que a rede entrega.</p>
+    <div class="pillars">
+      <div class="pillar"><span class="n">01 · Pontos</span><h3>Negociar os pontos</h3><p>Fecha os melhores locais de circulação usando o método e os argumentos da franqueadora.</p></div>
+      <div class="pillar"><span class="n">02 · Mídia</span><h3>Captar anunciantes</h3><p>Vende os espaços de mídia dos seus totens com treinamento e materiais de venda da rede.</p></div>
+      <div class="pillar"><span class="n">03 · Painel</span><h3>Acompanhar remoto</h3><p>Monitora receita, campanhas e operação de qualquer lugar, direto do painel de gestão.</p></div>
+    </div>
+    <div class="sec-cta"><a href="#form" class="btn">Quero receber a apresentação <span class="arw">→</span></a></div>
+  </div>
+</section>
+
+<!-- ============ CALCULADORA ============ -->
+<section class="section" id="calculadora">
+  <div class="wrap center">
+    <span class="eyebrow">Simulação ilustrativa</span>
+    <h2 class="big">Faça as contas do <span class="accent">seu potencial</span>.</h2>
+    <p class="lead">Ajuste o número de totens e o valor médio de mídia por totem para ter uma noção do potencial mensal. Números ilustrativos — não são promessa de rentabilidade.</p>
+  </div>
+  <div class="wrap">
+    <div class="calc">
+      <div>
+        <div class="field">
+          <label>Quantos totens <b id="vTot">4</b></label>
+          <input type="range" id="tot" min="1" max="20" value="4" step="1">
+          <p class="hint">Comece com poucos e escale conforme fecha pontos.</p>
+        </div>
+        <div class="field">
+          <label>Receita média de mídia por totem / mês <b id="vMid">R$ 1.200</b></label>
+          <input type="range" id="mid" min="300" max="4000" value="1200" step="100">
+          <p class="hint">Valor de exemplo. Depende do ponto, do público e do número de anunciantes.</p>
+        </div>
+        <div class="field">
+          <label>Ocupação média das telas <b id="vOcc">70%</b></label>
+          <input type="range" id="occ" min="20" max="100" value="70" step="5">
+          <p class="hint">Percentual do inventário de mídia efetivamente vendido.</p>
+        </div>
+      </div>
+      <div class="calc-out">
+        <div class="row"><span>Faturamento mensal estimado</span></div>
+        <div class="row"><b class="big" id="oMes">R$ 3.360</b></div>
+        <div class="row"><span>Projeção anual</span><b class="mid" id="oAno">R$ 40.320</b></div>
+        <div class="row"><span>Por totem / mês</span><b id="oUn">R$ 840</b></div>
+        <p class="disc">Cenário ilustrativo baseado nos valores que você escolheu. Não constitui promessa de rentabilidade. Condições reais na COF.</p>
+      </div>
+    </div>
+    <div class="sec-cta"><a href="#form" class="btn">Receber os números reais na apresentação <span class="arw">→</span></a></div>
+  </div>
+</section>
+
+<!-- ============ ECOSSISTEMA ============ -->
+<section class="section" id="ecossistema" style="background:var(--surface);border-block:1px solid var(--line)">
+  <div class="wrap center">
+    <span class="eyebrow">Ecossistema completo</span>
+    <h2 class="big">Você não compra uma máquina. Entra num <span class="accent">negócio inteiro</span>.</h2>
+    <p class="lead">Tecnologia, mídia, gestão e suporte já vêm resolvidos pela rede. Você fica com a parte que faz dinheiro: colocar os totens e vender as telas.</p>
+  </div>
+  <div class="wrap">
+    <div class="cards cols-3">
+      <div class="card"><div class="ic">🖥️</div><h3>Totens próprios</h3><p>Hardware pronto para operar, com a plataforma de mídia indoor embarcada.</p></div>
+      <div class="card"><div class="ic">📈</div><h3>Painel de gestão</h3><p>Receita, campanhas e operação de todos os totens num só lugar, remoto.</p></div>
+      <div class="card"><div class="ic">🎓</div><h3>Treinamento e suporte</h3><p>Método de vendas, materiais de marketing e acompanhamento do time de expansão.</p></div>
+    </div>
+    <div class="sec-cta"><a href="#form" class="btn">Quero receber a apresentação <span class="arw">→</span></a></div>
+  </div>
+</section>
+
+<!-- ============ AMBIENTES ============ -->
+<section class="section" id="ambientes">
+  <div class="wrap center">
+    <span class="eyebrow">Pontos de grande circulação</span>
+    <h2 class="big">Onde os seus totens <span class="accent">podem estar</span>.</h2>
+    <p class="lead">Onde tem fluxo de gente, tem espaço para as suas telas.</p>
+  </div>
+  <div class="marquee">
+    <div class="track">
+      <div class="amb"><span>Academias</span></div>
+      <div class="amb"><span>Cafeterias</span></div>
+      <div class="amb"><span>Farmácias</span></div>
+      <div class="amb"><span>Cinemas</span></div>
+      <div class="amb"><span>Universidades</span></div>
+      <div class="amb"><span>Clínicas</span></div>
+      <div class="amb"><span>Academias</span></div>
+      <div class="amb"><span>Cafeterias</span></div>
+      <div class="amb"><span>Farmácias</span></div>
+      <div class="amb"><span>Cinemas</span></div>
+      <div class="amb"><span>Universidades</span></div>
+      <div class="amb"><span>Clínicas</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DEPOIMENTOS ============ -->
+<section class="section" id="depoimentos" style="background:var(--surface);border-block:1px solid var(--line)">
+  <div class="wrap center">
+    <span class="eyebrow">Depoimentos</span>
+    <h2 class="big">Histórias de quem <span class="accent">já faz parte da rede</span>.</h2>
+  </div>
+  <div class="wrap">
+    <div class="videos">
+      <a class="vcard" href="https://www.youtube.com/watch?v=i3CulgSPGP0" target="_blank" rel="noopener">
+        <div class="play" aria-hidden="true">▶</div>
+        <div class="cap">Depoimento de franqueado<small>Assistir no YouTube →</small></div>
+      </a>
+      <a class="vcard" href="https://www.youtube.com/watch?v=CD2mZHXTUYc" target="_blank" rel="noopener">
+        <div class="play" aria-hidden="true">▶</div>
+        <div class="cap">Depoimento de franqueado<small>Assistir no YouTube →</small></div>
+      </a>
+      <a class="vcard" href="https://www.youtube.com/watch?v=-EqjQyIeUeY" target="_blank" rel="noopener">
+        <div class="play" aria-hidden="true">▶</div>
+        <div class="cap">Depoimento de franqueado<small>Assistir no YouTube →</small></div>
+      </a>
+    </div>
+    <div class="sec-cta"><a href="#form" class="btn">Quero ser o próximo <span class="arw">→</span></a></div>
+  </div>
+</section>
+
+<!-- ============ JORNADA ============ -->
+<section class="section" id="jornada">
+  <div class="wrap">
+    <span class="eyebrow">Como começa</span>
+    <h2 class="big">Do formulário à <span class="accent">sua franquia</span>.</h2>
+    <div class="steps">
+      <div class="step"><span class="n">01</span><h4>Formulário (30s)</h4><p>Você preenche seus dados e a disponibilidade de investimento. Sem compromisso.</p></div>
+      <div class="step"><span class="n">02</span><h4>Contato no WhatsApp</h4><p>Nosso time te chama em poucos minutos com a apresentação. Salve o contato.</p></div>
+      <div class="step"><span class="n">03</span><h4>Reunião online</h4><p>Conversa com um consultor de expansão para tirar dúvidas e ver o modelo completo.</p></div>
+      <div class="step"><span class="n">04</span><h4>Análise e COF</h4><p>Você recebe a Circular de Oferta de Franquia para decidir com segurança.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUALIFICADOR ============ -->
+<section class="section" id="perfil" style="background:var(--surface);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <span class="eyebrow">Transparência</span>
+    <h2 class="big">Antes de preencher: essa franquia <span class="accent">é para você?</span></h2>
+    <div class="fit">
+      <div class="box yes">
+        <h3>É para você, se…</h3>
+        <ul>
+          <li><span class="mk">✓</span> Quer um negócio enxuto e remoto.</li>
+          <li><span class="mk">✓</span> Topa aprender a vender e negociar pontos.</li>
+          <li><span class="mk">✓</span> Quer começar com investimento acessível.</li>
+          <li><span class="mk">✓</span> Busca uma marca com suporte de verdade.</li>
+        </ul>
+      </div>
+      <div class="box no">
+        <h3>Não é para você, se…</h3>
+        <ul>
+          <li><span class="mk">×</span> Procura retorno garantido. Negócio tem risco.</li>
+          <li><span class="mk">×</span> Quer algo 100% passivo. A gestão é simples, mas é gestão.</li>
+          <li><span class="mk">×</span> Não quer falar com anunciantes e donos de pontos.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section" id="faq">
+  <div class="wrap center">
+    <span class="eyebrow">Perguntas frequentes</span>
+    <h2 class="big">Tire suas dúvidas <span class="accent">antes de investir</span>.</h2>
+  </div>
+  <div class="wrap">
+    <div class="faq">
+      <details><summary>Preciso ter experiência com franquias?<span class="ico">+</span></summary><div class="body">Não. O modelo é simples e pronto para operar, com suporte total da franqueadora.</div></details>
+      <details><summary>Posso trabalhar de casa?<span class="ico">+</span></summary><div class="body">Sim. A gestão é 100% remota — você acompanha resultados e contatos comerciais pelo painel.</div></details>
+      <details><summary>A franqueadora ajuda a captar anunciantes?<span class="ico">+</span></summary><div class="body">Sim. Você recebe treinamento e materiais de vendas para facilitar a captação de clientes locais.</div></details>
+      <details><summary>Qual é o investimento?<span class="ico">+</span></summary><div class="body">As condições completas — investimento, taxas e projeções — estão na Circular de Oferta de Franquia (COF), enviada após o primeiro contato.</div></details>
+      <details><summary>Tenho exclusividade de região?<span class="ico">+</span></summary><div class="body">As regras de território e disponibilidade por região são detalhadas na apresentação e na COF.</div></details>
+      <details><summary>Quanto tempo até começar a operar?<span class="ico">+</span></summary><div class="body">Depende da instalação dos totens e da captação dos primeiros pontos — o time de expansão acompanha cada etapa.</div></details>
+    </div>
+    <div class="sec-cta"><a href="#form" class="btn">Quero receber a apresentação <span class="arw">→</span></a></div>
+  </div>
+</section>
+
+<!-- ============ FORM ============ -->
+<section class="section formsec" id="form">
+  <div class="wrap">
+    <div class="fcard">
+      <div class="info">
+        <span class="chip"><span class="blink"></span> Sem compromisso</span>
+        <h2>Garanta agora a sua apresentação.</h2>
+        <p>Preencha e receba a apresentação completa, com todos os números do modelo, direto no seu WhatsApp. Leva menos de 30 segundos.</p>
+      </div>
+
+      <form id="leadForm" novalidate>
+        <div class="field" id="wrap-nome">
+          <label for="f-nome">Nome *</label>
+          <input id="f-nome" name="nome" type="text" placeholder="Seu nome completo" autocomplete="name" required>
+          <span class="err">Digite seu nome.</span>
+        </div>
+        <div class="field" id="wrap-email">
+          <label for="f-email">E-mail *</label>
+          <input id="f-email" name="email" type="email" placeholder="voce@email.com" autocomplete="email" required>
+          <span class="err">Digite um e-mail válido.</span>
+        </div>
+        <div class="field" id="wrap-whats">
+          <label for="f-whats">WhatsApp (com DDD) *</label>
+          <input id="f-whats" name="whatsapp" type="tel" placeholder="(11) 91234-5678" autocomplete="tel" inputmode="tel" required>
+          <span class="err">Digite um WhatsApp válido, com DDD.</span>
+        </div>
+        <div class="field" id="wrap-inv">
+          <label for="f-inv">Disponibilidade de investimento *</label>
+          <select id="f-inv" name="investimento" required>
+            <option value="" selected disabled>Selecione uma opção</option>
+            <option>Ainda não tenho o valor para investir</option>
+            <option>Até R$ 20 mil</option>
+            <option>Entre R$ 20 mil e R$ 50 mil</option>
+            <option>Acima de R$ 50 mil</option>
+          </select>
+          <span class="err">Selecione uma opção.</span>
+        </div>
+        <button type="submit" class="btn block">Enviar e receber apresentação <span class="arw">→</span></button>
+        <p class="privacy">Seus dados estão seguros. Sem spam — só a apresentação e o contato do nosso time.</p>
+      </form>
+
+      <div class="success" id="success" hidden>
+        <div class="ok" aria-hidden="true">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M4 12.5l5 5L20 6.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Apresentação liberada!</h3>
+        <p>Recebemos seus dados. Em breve nosso time te chama no WhatsApp com a apresentação. <b style="color:#fff">Salve o contato</b> para a mensagem não cair como desconhecido.</p>
+        <span class="todef">WhatsApp e PDF a configurar</span>
+        <a class="btn" href="#" id="waBtn">Chamar no WhatsApp agora <span class="arw">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site">
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="brand"><span class="bolt">⚡</span>Publicarga</div>
+        <p>Franquia de totens carregadores com mídia indoor. Modelo enxuto, remoto e com suporte completo da franqueadora.</p>
+      </div>
+      <div class="col">
+        <h5>Navegação</h5>
+        <a href="#modelo">O modelo</a>
+        <a href="#pratica">Na prática</a>
+        <a href="#calculadora">Simulação</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="col">
+        <h5>Institucional</h5>
+        <a href="#">Site oficial</a>
+        <a href="#">Política de Privacidade</a>
+        <a href="#">Termos de Uso</a>
+      </div>
+    </div>
+    <p class="flegal">Os resultados variam conforme localização, gestão e condições de mercado e não constituem promessa de rentabilidade. Informações completas na Circular de Oferta de Franquia (COF). © 2026 Publicarga. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<div class="sticky">
+  <a href="#form" class="btn">Quero receber a apresentação →</a>
+</div>
+
+<script>
+  // ---- Calculadora ----
+  var tot=document.getElementById('tot'),mid=document.getElementById('mid'),occ=document.getElementById('occ');
+  var vTot=document.getElementById('vTot'),vMid=document.getElementById('vMid'),vOcc=document.getElementById('vOcc');
+  var oMes=document.getElementById('oMes'),oAno=document.getElementById('oAno'),oUn=document.getElementById('oUn');
+  function brl(n){return 'R$ '+Math.round(n).toLocaleString('pt-BR');}
+  function calc(){
+    var t=+tot.value,m=+mid.value,o=+occ.value/100;
+    var un=m*o, mes=un*t;
+    vTot.textContent=t; vMid.textContent=brl(m); vOcc.textContent=(o*100)+'%';
+    oUn.textContent=brl(un); oMes.textContent=brl(mes); oAno.textContent=brl(mes*12);
+  }
+  [tot,mid,occ].forEach(function(el){el.addEventListener('input',calc);});
+  calc();
+
+  // ---- Count-up (respeita reduced motion; valor final já no HTML) ----
+  var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(!reduce){
+    document.querySelectorAll('.num[data-count]').forEach(function(el){
+      var end=+el.getAttribute('data-count'),pre=el.getAttribute('data-prefix')||'',suf=el.getAttribute('data-suffix')||'',t0=null;
+      function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/900,1);el.textContent=pre+Math.round(end*p)+suf;if(p<1)requestAnimationFrame(step);}
+      var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){requestAnimationFrame(step);io.disconnect();}},{threshold:.5});
+      io.observe(el);
+    });
+  }
+
+  // ---- Form ----
+  var form=document.getElementById('leadForm');
+  function setErr(id,bad){document.getElementById(id).classList.toggle('invalid',bad);}
+  function validEmail(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);}
+  function validPhone(v){return (v.replace(/\D/g,'').length>=10);}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var nome=document.getElementById('f-nome').value.trim();
+    var email=document.getElementById('f-email').value.trim();
+    var whats=document.getElementById('f-whats').value.trim();
+    var inv=document.getElementById('f-inv').value;
+    var ok=true;
+    if(!nome){setErr('wrap-nome',true);ok=false;}else setErr('wrap-nome',false);
+    if(!validEmail(email)){setErr('wrap-email',true);ok=false;}else setErr('wrap-email',false);
+    if(!validPhone(whats)){setErr('wrap-whats',true);ok=false;}else setErr('wrap-whats',false);
+    if(!inv){setErr('wrap-inv',true);ok=false;}else setErr('wrap-inv',false);
+    if(!ok)return;
+    // TODO: integrar envio de lead + tracking (Pixel/GA4/Ads) quando definidos
+    form.hidden=true;
+    document.getElementById('success').hidden=false;
+    document.getElementById('success').scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});
+  });
+</script>
