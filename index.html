@@ -178,7 +178,9 @@
   .marquee{overflow:hidden;margin-top:40px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
   .track{display:flex;gap:16px;width:max-content;animation:scroll 34s linear infinite}
   @keyframes scroll{to{transform:translateX(-50%)}}
-  .amb{position:relative;width:290px;height:200px;border-radius:var(--r);border:1px solid var(--line);flex:0 0 auto;overflow:hidden}
+  .amb-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:40px}
+  .amb-grid .amb{width:100%;height:220px}
+  .amb{position:relative;width:290px;height:200px;border-radius:var(--r);border:1px solid var(--line);overflow:hidden}
   .amb img{width:100%;height:100%;object-fit:cover;display:block}
   .amb figcaption{position:absolute;left:12px;bottom:12px;background:rgba(0,0,0,.62);color:#fff;padding:6px 12px;border-radius:9px;border:1px solid rgba(255,255,255,.18);font-weight:800;font-family:var(--display);font-size:15px;backdrop-filter:blur(4px)}
   @media(prefers-reduced-motion:reduce){.track{animation:none}}
@@ -526,18 +528,13 @@
     <h2 class="big">Todo lugar com movimento <span class="accent">é um ponto</span>.</h2>
     <p class="lead">Se passa gente com celular na mão, cabe um totem seu ali.</p>
   </div>
-  <div class="marquee">
-    <div class="track">
+  <div class="wrap">
+    <div class="amb-grid">
       <figure class="amb"><img src="assets/amb-shopping.jpg" alt="Totem Publicarga em shopping" loading="lazy"><figcaption>Shoppings</figcaption></figure>
       <figure class="amb"><img src="assets/amb-clinica.jpg" alt="Totem Publicarga em recepção de clínica/hospital" loading="lazy"><figcaption>Clínicas e hospitais</figcaption></figure>
       <figure class="amb"><img src="assets/amb-aeroporto.jpg" alt="Totem Publicarga em aeroporto" loading="lazy"><figcaption>Aeroportos</figcaption></figure>
       <figure class="amb"><img src="assets/amb-cafe.jpg" alt="Totem Publicarga em café/restaurante" loading="lazy"><figcaption>Cafés e restaurantes</figcaption></figure>
       <figure class="amb"><img src="assets/amb-academia.jpg" alt="Totem Publicarga em academia" loading="lazy"><figcaption>Academias</figcaption></figure>
-      <figure class="amb" aria-hidden="true"><img src="assets/amb-shopping.jpg" alt="" loading="lazy"><figcaption>Shoppings</figcaption></figure>
-      <figure class="amb" aria-hidden="true"><img src="assets/amb-clinica.jpg" alt="" loading="lazy"><figcaption>Clínicas e hospitais</figcaption></figure>
-      <figure class="amb" aria-hidden="true"><img src="assets/amb-aeroporto.jpg" alt="" loading="lazy"><figcaption>Aeroportos</figcaption></figure>
-      <figure class="amb" aria-hidden="true"><img src="assets/amb-cafe.jpg" alt="" loading="lazy"><figcaption>Cafés e restaurantes</figcaption></figure>
-      <figure class="amb" aria-hidden="true"><img src="assets/amb-academia.jpg" alt="" loading="lazy"><figcaption>Academias</figcaption></figure>
     </div>
   </div>
 </section>
