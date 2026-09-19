@@ -121,7 +121,7 @@
   .hero-trust{display:flex;align-items:center;gap:12px;margin-top:30px;color:var(--muted);font-size:14px}
   .hero-trust b{color:var(--ink)}
   .totem-c{display:flex;justify-content:center;align-items:center;position:relative}
-  .totem-c::before{content:"";position:absolute;width:80%;height:70%;background:radial-gradient(circle,rgba(0,255,3,.16),transparent 65%);filter:blur(20px);z-index:0}
+  .totem-c::before{content:"";position:absolute;width:94%;height:88%;border-radius:34px;background:radial-gradient(120% 100% at 28% 18%,rgba(255,120,0,.38),transparent 58%),radial-gradient(110% 100% at 82% 92%,rgba(0,255,3,.24),transparent 60%),linear-gradient(160deg,#1b1d21,#0a0b0d);border:1px solid var(--line);z-index:0}
   .totem-c img{position:relative;z-index:1;width:min(700px,108%);height:auto;filter:drop-shadow(0 30px 70px rgba(0,0,0,.7))}
 
   /* stats */
@@ -134,8 +134,8 @@
   .cards{display:grid;gap:22px;margin-top:44px}
   .cols-2{grid-template-columns:1fr 1fr}
   .cols-3{grid-template-columns:repeat(3,1fr)}
-  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:30px}
-  .card .ic{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;margin-bottom:18px;background:var(--volt-dim);color:var(--volt);border:1px solid rgba(0,255,3,.25)}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:30px;display:flex;flex-direction:column;align-items:flex-start}
+  .card .ic{flex:0 0 auto;width:48px;height:48px;border-radius:14px;display:grid;place-items:center;margin-bottom:18px;background:var(--volt-dim);color:var(--volt);border:1px solid rgba(0,255,3,.25)}
   .card.brand .ic{background:rgba(255,120,0,.14);color:var(--brand);border-color:rgba(255,120,0,.3)}
   .card h3{font-size:21px;margin-bottom:10px}
   .card p{color:var(--muted);font-size:15px}
@@ -218,7 +218,11 @@
   .fcard .info{padding:44px;background:radial-gradient(120% 90% at 0% 0%,rgba(255,120,0,.14),transparent 55%)}
   .fcard .info h2{font-size:clamp(26px,3.5vw,38px);margin-bottom:16px}
   .fcard .info p{color:var(--muted)}
-  .fcard .info .mascote{width:min(240px,60%);margin-top:26px;filter:drop-shadow(0 20px 40px rgba(0,0,0,.5))}
+  .fcard .info .finfo-logo{width:min(220px,58%);margin-top:28px}
+  .jestor-col{background:#ffffff;padding:26px;display:flex;flex-direction:column;justify-content:center;gap:12px;min-height:480px}
+  .jestor-col .jestor-funil{width:100%}
+  .jestor-fallback{color:#6b7076;font-size:13px;text-align:center;margin:0}
+  .jestor-fallback a{color:var(--brand);font-weight:700}
   .chip{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--volt);margin-bottom:16px}
   .chip .blink{width:8px;height:8px;border-radius:50%;background:var(--volt);box-shadow:0 0 10px var(--volt);animation:blink 1.4s infinite}
   @keyframes blink{50%{opacity:.3}}
@@ -237,7 +241,7 @@
   .success h3{font-size:24px}
   .success p{color:var(--muted);max-width:42ch}
   .success .todef{font-size:12px;color:var(--brand);border:1px dashed rgba(255,120,0,.4);padding:6px 12px;border-radius:8px}
-  @media(max-width:820px){.fcard{grid-template-columns:1fr}.fcard .info,form,.success{padding:30px}}
+  @media(max-width:820px){.fcard{grid-template-columns:1fr}.fcard .info{padding:30px}.jestor-col{padding:22px;min-height:auto}}
 
   /* footer */
   footer.site{border-top:1px solid var(--line);padding-block:56px 40px;background:#000}
@@ -270,7 +274,7 @@
     .lead{font-size:16px}
     .eyebrow{font-size:11px;letter-spacing:.14em}
     .totem-c img{width:min(520px,96%)}
-    .totem-c::before{width:76%;height:64%}
+    .totem-c::before{width:96%;height:82%;border-radius:26px}
     .hero-ctas{flex-direction:column;align-items:stretch}
     .hero-ctas .btn{width:100%}
     .sec-cta{margin-top:32px}
@@ -328,10 +332,10 @@
   <div class="wrap grid">
     <div>
       <span class="badge hero-in"><span class="dot"></span> +60 totens já operando pelo Brasil</span>
-      <h1 class="hero-in d1">A marca paga pela tela. O ponto oferece de graça. <span class="hl">O lucro é seu.</span></h1>
-      <p class="lead hero-in d2">A Publicarga é uma franquia de <b style="color:#fff">mídia OOH em totem carregador</b>: você espalha telas que carregam celular nos lugares cheios de gente e cobra das marcas para anunciar nelas. Enxuto, digital e tocado do seu celular.</p>
+      <h1 class="hero-in d1">A marca paga pra anunciar. O ponto quer o seu totem. <span class="hl">O lucro é seu.</span></h1>
+      <p class="lead hero-in d2">A Publicarga é uma franquia de <b style="color:#fff">mídia OOH em totem carregador</b>: você instala totens que carregam celular nos pontos cheios de gente e cobra das marcas por tempo de anúncio na tela. Enxuto, digital e tocado do seu celular.</p>
 
-      <div class="price hero-in d2">Investimento <span class="todef">[valor a definir]</span> para começar sua rede de totens — condições e projeções detalhadas na Circular de Oferta de Franquia (COF).</div>
+      <div class="price hero-in d2">Investimento <b>a partir de R$ 15.990</b> para montar a sua operação de totens — condições e projeções detalhadas na Circular de Oferta de Franquia (COF).</div>
 
       <div class="pills hero-in d3">
         <span>Carga e Wi-Fi grátis</span>
@@ -389,7 +393,7 @@
 <section class="section" id="modelo">
   <div class="wrap center">
     <span class="eyebrow">Como funciona</span>
-    <h2 class="big">Três lados ganham. Você fica com <span class="accent">a receita da tela</span>.</h2>
+    <h2 class="big">Três lados ganham. Você fica com <span class="accent">a receita da mídia</span>.</h2>
     <p class="lead">A conta é simples: o ponto ganha um atrativo que segura o público, as pessoas carregam o celular de graça e as marcas pagam para aparecer na tela enquanto isso acontece. Esse dinheiro da mídia é o seu.</p>
   </div>
   <div class="wrap">
@@ -465,8 +469,8 @@
     <h2 class="big">Poucas horas por semana, <span class="accent">no seu ritmo</span>.</h2>
     <p class="lead" style="margin-top:14px">Nada de bater ponto. O trabalho se resume a três movimentos — e a rede te dá método e material para cada um deles.</p>
     <div class="pillars">
-      <div class="pillar"><span class="n">Passo 01</span><h3>Coloque os totens</h3><p>Encontre e feche os pontos de maior movimento com o roteiro de abordagem que a franqueadora entrega pronto.</p></div>
-      <div class="pillar"><span class="n">Passo 02</span><h3>Venda as telas</h3><p>Ofereça a mídia para comércios e marcas da região, apoiado por tabela, treinamento e materiais de venda.</p></div>
+      <div class="pillar"><span class="n">Passo 01</span><h3>Instale os totens</h3><p>Encontre e feche os pontos de maior movimento com o roteiro de abordagem que a franqueadora entrega pronto.</p></div>
+      <div class="pillar"><span class="n">Passo 02</span><h3>Venda tempo na tela</h3><p>Ofereça tempo de anúncio para comércios e marcas da região, apoiado por tabela, treinamento e materiais de venda.</p></div>
       <div class="pillar"><span class="n">Passo 03</span><h3>Gerencie no painel</h3><p>Programe campanhas, veja a receita e monitore os totens de qualquer lugar, direto do celular.</p></div>
     </div>
   </div>
@@ -571,7 +575,7 @@
         <ul>
           <li><span class="mk">✓</span> Quer um negócio digital, leve e que dá para tocar em paralelo.</li>
           <li><span class="mk">✓</span> Não tem medo de conversar, negociar ponto e vender mídia.</li>
-          <li><span class="mk">✓</span> Prefere começar pequeno e escalar conforme fecha telas.</li>
+          <li><span class="mk">✓</span> Prefere começar pequeno e escalar conforme instala novos totens.</li>
           <li><span class="mk">✓</span> Valoriza entrar numa rede com método pronto.</li>
         </ul>
       </div>
@@ -614,45 +618,13 @@
         <span class="chip"><span class="blink"></span> Sem compromisso</span>
         <h2>Receba a apresentação completa.</h2>
         <p>Preencha e nosso time te chama no WhatsApp com todos os números do modelo. Leva menos de 30 segundos.</p>
-        <img class="mascote" src="assets/mascote.png" alt="Mascote Publicarga: totem sorridente com polegar para cima segurando dinheiro" loading="lazy">
+        <img class="finfo-logo" src="assets/logo-branca.png" alt="Publicarga" loading="lazy">
       </div>
 
-      <form id="leadForm" novalidate>
-        <div class="field" id="wrap-nome">
-          <label for="f-nome">Nome *</label>
-          <input id="f-nome" name="nome" type="text" placeholder="Seu nome completo" autocomplete="name" required>
-          <span class="err">Digite seu nome.</span>
-        </div>
-        <div class="field" id="wrap-email">
-          <label for="f-email">E-mail *</label>
-          <input id="f-email" name="email" type="email" placeholder="voce@email.com" autocomplete="email" required>
-          <span class="err">Digite um e-mail válido.</span>
-        </div>
-        <div class="field" id="wrap-whats">
-          <label for="f-whats">WhatsApp (com DDD) *</label>
-          <input id="f-whats" name="whatsapp" type="tel" placeholder="(11) 91234-5678" autocomplete="tel" inputmode="numeric" maxlength="16" required>
-          <span class="err">Digite um WhatsApp válido, com DDD.</span>
-        </div>
-        <div class="field" id="wrap-inv">
-          <label for="f-inv">Quanto pretende investir? *</label>
-          <select id="f-inv" name="investimento" required>
-            <option value="" selected disabled>Selecione uma opção</option>
-            <option>Ainda estou avaliando</option>
-            <option>Até R$ 20 mil</option>
-            <option>Entre R$ 20 mil e R$ 50 mil</option>
-            <option>Acima de R$ 50 mil</option>
-          </select>
-          <span class="err">Selecione uma opção.</span>
-        </div>
-        <button type="submit" class="btn block">Quero receber a apresentação <span class="arw">→</span></button>
-        <p class="privacy">Seus dados estão seguros. Sem spam — só a apresentação e o contato do nosso time.</p>
-      </form>
-
-      <div class="success" id="success" hidden>
-        <div class="ok" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M4 12.5l5 5L20 6.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Tudo certo! 🎉</h3>
-        <p>Recebemos seus dados. Em breve nosso time te chama no WhatsApp com a apresentação. <b style="color:#fff">Salve o contato</b> para a mensagem não cair como desconhecido.</p>
-        <span class="todef">WhatsApp e PDF a configurar</span>
+      <div class="jestor-col">
+        <!-- Formulário BEABÁ JESTOR — Publicarga -->
+        <div class="jestor-funil" data-funil="funil_1785333342548_nm24"></div>
+        <p class="jestor-fallback">Carregando o formulário… se não aparecer, <a href="#top">recarregue a página</a> ou fale com a gente pelo WhatsApp.</p>
       </div>
     </div>
   </div>
@@ -731,36 +703,7 @@
     });
   }
 
-  // ---- Máscara de WhatsApp ----
-  var whats=document.getElementById('f-whats');
-  whats.addEventListener('input',function(){
-    var d=whats.value.replace(/\D/g,'').slice(0,11),out='';
-    if(d.length>0)out='('+d.slice(0,2);
-    if(d.length>=3)out+=') '+d.slice(2,d.length>10?7:6);
-    if(d.length>6)out+='-'+d.slice(d.length>10?7:6,11);
-    whats.value=out;
-  });
-
-  // ---- Form ----
-  var form=document.getElementById('leadForm');
-  function setErr(id,bad){document.getElementById(id).classList.toggle('invalid',bad);}
-  function validEmail(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);}
-  function validPhone(v){return v.replace(/\D/g,'').length>=10;}
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
-    var nome=document.getElementById('f-nome').value.trim();
-    var email=document.getElementById('f-email').value.trim();
-    var w=document.getElementById('f-whats').value.trim();
-    var inv=document.getElementById('f-inv').value;
-    var ok=true;
-    if(!nome){setErr('wrap-nome',true);ok=false;}else setErr('wrap-nome',false);
-    if(!validEmail(email)){setErr('wrap-email',true);ok=false;}else setErr('wrap-email',false);
-    if(!validPhone(w)){setErr('wrap-whats',true);ok=false;}else setErr('wrap-whats',false);
-    if(!inv){setErr('wrap-inv',true);ok=false;}else setErr('wrap-inv',false);
-    if(!ok)return;
-    // TODO: integrar envio de lead + tracking (Pixel/GA4/Ads) quando definidos
-    form.hidden=true;
-    document.getElementById('success').hidden=false;
-    document.getElementById('success').scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});
-  });
 </script>
+
+<!-- Formulário BEABÁ JESTOR — Publicarga -->
+<script src="https://www.jestor.app.br/embed.js" async></script>
