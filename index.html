@@ -53,6 +53,21 @@
   .eyebrow::before{content:"";width:22px;height:2px;background:var(--volt);box-shadow:0 0 10px var(--volt)}
   .center{text-align:center}
   .center .eyebrow{justify-content:center}
+
+  /* seções claras (quebra de contraste) */
+  section.light{
+    --bg:#f4f3f0;--surface:#ffffff;--surface-2:#eceae5;
+    --line:rgba(0,0,0,.10);--line-strong:rgba(0,0,0,.16);
+    --ink:#12130f;--muted:#565a5f;--muted-2:#8a8d92;
+    --volt:#0a9c0c;--volt-dim:rgba(10,156,12,.12);
+    background:var(--bg);color:var(--ink);border-block:1px solid rgba(0,0,0,.08)
+  }
+  section.light .card,section.light .pillar,section.light .step,section.light .box,section.light details{box-shadow:0 6px 24px -14px rgba(0,0,0,.35)}
+
+  /* banner de faturamento */
+  .banner .num-big{font-size:clamp(36px,8vw,74px);line-height:1.02;letter-spacing:-.03em}
+  .banner .lead{margin-top:18px}
+  .banner .legal{text-align:center;margin-inline:auto;margin-top:22px}
   h2.big{font-size:clamp(30px,5vw,52px)}
   .lead{color:var(--muted);font-size:clamp(16px,2vw,19px);max-width:62ch}
   .center .lead{margin-inline:auto}
@@ -419,6 +434,17 @@
   </div>
 </section>
 
+<!-- ============ BANNER FATURAMENTO ============ -->
+<section class="section light banner" id="lucro">
+  <div class="wrap center">
+    <span class="eyebrow">O potencial do modelo</span>
+    <h2 class="num-big">Lucre até <span class="accent">R$ 124 mil</span> por ano.</h2>
+    <p class="lead">Com a rede de totens bem posicionada e as telas vendidas, esse é o potencial de faturamento anual da operação. Quer ver como chegar lá?</p>
+    <div class="sec-cta"><a href="#form" class="btn">Quero esse potencial <span class="arw">→</span></a></div>
+    <p class="legal">Valor ilustrativo de potencial máximo. Os resultados variam conforme localização, número de totens, esforço de vendas e mercado, e não constituem promessa de rentabilidade. Condições completas na Circular de Oferta de Franquia (COF).</p>
+  </div>
+</section>
+
 <!-- ============ WI-FI MARKETING ============ -->
 <section class="section" id="wifi">
   <div class="wrap">
@@ -477,7 +503,7 @@
 </section>
 
 <!-- ============ O QUE VEM JUNTO ============ -->
-<section class="section" id="ecossistema">
+<section class="section light" id="ecossistema">
   <div class="wrap center">
     <span class="eyebrow">O que vem junto</span>
     <h2 class="big">Você não compra um totem. Entra numa <span class="accent">operação pronta</span>.</h2>
@@ -551,7 +577,7 @@
 </section>
 
 <!-- ============ PRÓXIMOS PASSOS ============ -->
-<section class="section" id="jornada" style="background:var(--surface);border-block:1px solid var(--line)">
+<section class="section light" id="jornada">
   <div class="wrap">
     <span class="eyebrow">Próximos passos</span>
     <h2 class="big">De curioso a franqueado <span class="accent">em 4 passos</span>.</h2>
