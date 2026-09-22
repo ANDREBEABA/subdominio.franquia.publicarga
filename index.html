@@ -190,10 +190,12 @@
   .videos{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
   .vcard{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);aspect-ratio:9/12;background:radial-gradient(120% 80% at 50% 0%,var(--surface-2),#000)}
   .ytf{position:absolute;inset:0;width:100%;height:100%;border:0;cursor:pointer;background:transparent;color:var(--ink);display:flex;align-items:flex-end;padding:22px;text-align:left}
-  .ytf .play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;font-size:22px;box-shadow:0 10px 30px -6px rgba(255,120,0,.7);transition:transform .15s}
+  .ythumb{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .ytf::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.12),rgba(0,0,0,.72));z-index:1}
+  .ytf .play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;font-size:22px;box-shadow:0 10px 30px -6px rgba(255,120,0,.7);transition:transform .15s;z-index:2}
   .video-hero .ytf .play{width:84px;height:84px;font-size:28px}
   .ytf:hover .play{transform:translate(-50%,-50%) scale(1.08)}
-  .ytf .cap{font-weight:700;font-size:14px;position:relative;z-index:1}
+  .ytf .cap{font-weight:700;font-size:14px;position:relative;z-index:2}
   .ytf .cap small{display:block;color:var(--muted);font-weight:600;margin-top:2px}
   .vwrap iframe,.video-hero iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
   .vfallback{margin-top:12px;text-align:center;font-size:13px;color:var(--muted-2)}
@@ -237,9 +239,9 @@
   .fcard .info h2{font-size:clamp(26px,3.5vw,38px);margin-bottom:16px}
   .fcard .info p{color:var(--muted)}
   .fcard .info .finfo-logo{width:min(220px,58%);margin-top:28px}
-  .jestor-col{background:#ffffff;padding:26px;display:flex;flex-direction:column;justify-content:center;gap:12px;min-height:480px}
+  .jestor-col{background:var(--surface-2);padding:26px;display:flex;flex-direction:column;justify-content:center;gap:12px;min-height:480px}
   .jestor-col .jestor-funil{width:100%}
-  .jestor-fallback{color:#6b7076;font-size:13px;text-align:center;margin:0}
+  .jestor-fallback{color:var(--muted);font-size:13px;text-align:center;margin:0}
   .jestor-fallback a{color:var(--brand);font-weight:700}
   .chip{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--volt);margin-bottom:16px}
   .chip .blink{width:8px;height:8px;border-radius:50%;background:var(--volt);box-shadow:0 0 10px var(--volt);animation:blink 1.4s infinite}
@@ -388,6 +390,7 @@
   <div class="wrap">
     <div class="video-hero">
       <button class="ytf" data-id="obCb1jnXzbs" aria-label="Reproduzir vídeo institucional">
+        <img class="ythumb" src="https://img.youtube.com/vi/obCb1jnXzbs/hqdefault.jpg" alt="" loading="lazy">
         <span class="play" aria-hidden="true">▶</span>
         <span class="cap">Vídeo institucional Publicarga<small>Clique para assistir aqui mesmo</small></span>
       </button>
@@ -528,13 +531,18 @@
     <h2 class="big">Todo lugar com movimento <span class="accent">é um ponto</span>.</h2>
     <p class="lead">Se passa gente com celular na mão, cabe um totem seu ali.</p>
   </div>
-  <div class="wrap">
-    <div class="amb-grid">
+  <div class="marquee">
+    <div class="track">
       <figure class="amb"><img src="assets/amb-shopping.jpg" alt="Totem Publicarga em shopping" loading="lazy"><figcaption>Shoppings</figcaption></figure>
       <figure class="amb"><img src="assets/amb-clinica.jpg" alt="Totem Publicarga em recepção de clínica/hospital" loading="lazy"><figcaption>Clínicas e hospitais</figcaption></figure>
       <figure class="amb"><img src="assets/amb-aeroporto.jpg" alt="Totem Publicarga em aeroporto" loading="lazy"><figcaption>Aeroportos</figcaption></figure>
       <figure class="amb"><img src="assets/amb-cafe.jpg" alt="Totem Publicarga em café/restaurante" loading="lazy"><figcaption>Cafés e restaurantes</figcaption></figure>
       <figure class="amb"><img src="assets/amb-academia.jpg" alt="Totem Publicarga em academia" loading="lazy"><figcaption>Academias</figcaption></figure>
+      <figure class="amb" aria-hidden="true"><img src="assets/amb-shopping.jpg" alt="" loading="lazy"><figcaption>Shoppings</figcaption></figure>
+      <figure class="amb" aria-hidden="true"><img src="assets/amb-clinica.jpg" alt="" loading="lazy"><figcaption>Clínicas e hospitais</figcaption></figure>
+      <figure class="amb" aria-hidden="true"><img src="assets/amb-aeroporto.jpg" alt="" loading="lazy"><figcaption>Aeroportos</figcaption></figure>
+      <figure class="amb" aria-hidden="true"><img src="assets/amb-cafe.jpg" alt="" loading="lazy"><figcaption>Cafés e restaurantes</figcaption></figure>
+      <figure class="amb" aria-hidden="true"><img src="assets/amb-academia.jpg" alt="" loading="lazy"><figcaption>Academias</figcaption></figure>
     </div>
   </div>
 </section>
@@ -550,18 +558,21 @@
     <div class="videos">
       <div class="vcard vwrap">
         <button class="ytf" data-id="i3CulgSPGP0" aria-label="Reproduzir depoimento de franqueado">
+          <img class="ythumb" src="https://img.youtube.com/vi/i3CulgSPGP0/hqdefault.jpg" alt="" loading="lazy">
           <span class="play" aria-hidden="true">▶</span>
           <span class="cap">Depoimento de franqueado<small>Clique para assistir</small></span>
         </button>
       </div>
       <div class="vcard vwrap">
         <button class="ytf" data-id="CD2mZHXTUYc" aria-label="Reproduzir depoimento de franqueado">
+          <img class="ythumb" src="https://img.youtube.com/vi/CD2mZHXTUYc/hqdefault.jpg" alt="" loading="lazy">
           <span class="play" aria-hidden="true">▶</span>
           <span class="cap">Depoimento de franqueado<small>Clique para assistir</small></span>
         </button>
       </div>
       <div class="vcard vwrap">
         <button class="ytf" data-id="-EqjQyIeUeY" aria-label="Reproduzir depoimento de franqueado">
+          <img class="ythumb" src="https://img.youtube.com/vi/-EqjQyIeUeY/hqdefault.jpg" alt="" loading="lazy">
           <span class="play" aria-hidden="true">▶</span>
           <span class="cap">Depoimento de franqueado<small>Clique para assistir</small></span>
         </button>
@@ -710,10 +721,11 @@
       ifr.setAttribute('title','Vídeo Publicarga');
       ifr.setAttribute('allow','accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
       ifr.setAttribute('allowfullscreen','');
-      var parent=btn.parentNode;
       btn.replaceWith(ifr);
     });
   });
+  // remove a capa se o thumbnail não carregar (ex.: prévia com CSP)
+  document.querySelectorAll('.ythumb').forEach(function(img){img.addEventListener('error',function(){img.remove();});});
 
   // ---- Count-up (valor final já no HTML) ----
   if(!reduce){
