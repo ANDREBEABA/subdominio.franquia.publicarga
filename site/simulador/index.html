@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Simulador de faturamento | Franquia Publicarga</title>
+<meta name="description" content="Simule o faturamento estimado de um ou mais totens Publicarga, com as premissas que você definir.">
+<meta name="robots" content="index, follow">
+<meta property="og:locale" content="pt_BR">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="../assets/mascote.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/quadrinhos.css">
+</head>
+<body>
+<header class="site"><div class="wrap nav">
+<a href="/" class="brand" aria-label="Publicarga"><img src="../assets/logo-branca.png" alt="Publicarga" style="height:44px;width:auto"></a>
+<nav class="nav-links" aria-label="Principal"><a href="/">Início</a><a href="/franquia/">Franquia</a><a href="https://blog.publicarga.com.br">Blog</a><a href="/contato/">Contato</a></nav>
+<div class="nav-cta"><a href="/franquia/" class="btn desk">Quero ser franqueado <span class="arw">→</span></a>
+<button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="drawer"><span></span></button></div>
+</div></header>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-hidden="true">
+<button class="close" id="drawerClose" aria-label="Fechar menu">×</button>
+<a href="/">Início</a><a href="/franquia/">Franquia</a><a href="https://blog.publicarga.com.br">Blog</a><a href="/contato/">Contato</a>
+<a href="/franquia/" class="btn">Quero ser franqueado →</a>
+</aside>
+<section class="section page-hero"><div class="wrap center">
+  <span class="eyebrow">Simulador</span>
+  <h1 class="big">Monte o seu <span class="accent">cenário</span>.</h1>
+  <p class="lead">Ajuste a quantidade de totens, de anunciantes e o valor mensal por anúncio, e veja a estimativa do resultado.</p>
+</div></section>
+
+<section class="section simulador-sec" id="simulador">
+  <div class="wrap">
+    <div class="pc-simulador-wrapper">
+        <div class="pc-simulador-header">
+            <h2>SIMULADOR PUBLICARGA</h2>
+        </div>
+
+        <div class="pc-simulador-body">
+            <div class="pc-sim-controls">
+                <div class="pc-control-group">
+                    <div class="pc-control-labels">
+                        <label>TOTENS NA SUA OPERAÇÃO</label>
+                        <span id="pc-val-totens" class="pc-highlight-text">1 totem</span>
+                    </div>
+                    <input type="range" id="pc-range-totens" min="1" max="10" value="1" step="1">
+                </div>
+
+                <div class="pc-control-group">
+                    <div class="pc-control-labels">
+                        <label>ANUNCIANTES POR TOTEM</label>
+                        <span id="pc-val-ads" class="pc-highlight-text">40 anúncios</span>
+                    </div>
+                    <input type="range" id="pc-range-ads" min="1" max="60" value="40" step="1">
+                    <small>Capacidade: de 1 a 60 anunciantes.</small>
+                </div>
+
+                <div class="pc-control-group">
+                    <div class="pc-control-labels">
+                        <label>VALOR MENSAL POR ANÚNCIO</label>
+                        <span id="pc-val-price" class="pc-highlight-text">R$ 297,00</span>
+                    </div>
+                    <input type="range" id="pc-range-price" min="97" max="500" value="297" step="1">
+                </div>
+            </div>
+
+            <div class="pc-sim-results">
+                <div class="pc-result-highlight">
+                    <p>RESULTADO LÍQUIDO ESTIMADO</p>
+                    <h3 id="pc-resultado-liquido">R$ 11.394,00</h3>
+                    <div class="pc-highlight-sub">
+                        <span>Receita bruta <b id="pc-sub-receita">R$ 11.880,00</b></span>
+                        <span>Deduções <b id="pc-sub-deducoes">- R$ 486,00</b></span>
+                    </div>
+                </div>
+
+                <div class="pc-linha-a-linha">
+                    <div class="pc-table-header">VER A CONTA LINHA A LINHA</div>
+                    <div class="pc-table-row pc-row-bold">
+                        <span>Receita Bruta</span>
+                        <span id="pc-tb-receita">R$ 11.880,00</span>
+                    </div>
+                    <div class="pc-table-row">
+                        <span>Impostos estimados (MEI)</span>
+                        <span class="pc-text-red" id="pc-tb-mei">- R$ 87,00</span>
+                    </div>
+                    <div class="pc-table-row">
+                        <span>Royalties Fixos (<span id="pc-qtd-totens-royalty">1</span>x R$ 399)</span>
+                        <span class="pc-text-red" id="pc-tb-royalties">- R$ 399,00</span>
+                    </div>
+                    <div class="pc-table-row pc-row-bold pc-row-green">
+                        <span>Royalties Variáveis</span>
+                        <span>R$ 0,00 (Não Cobramos)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pc-simulador-footer">
+            <p>Simulação com premissas abertas para o cenário que você montou. Não é promessa de faturamento nem de lucro. O resultado depende da sua atuação comercial, da região e dos pontos que você conquistar. Cálculo de impostos baseado em MEI.</p>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section class="section"><div class="wrap center">
+  <div class="sec-cta"><a href="/franquia/" class="btn">Quero ser franqueado <span class="arw">→</span></a></div>
+</div></section>
+
+<footer class="site"><div class="wrap">
+<div class="fgrid">
+<div><div class="brand"><img src="../assets/logo-branca.png" alt="Publicarga" style="height:60px;width:auto"></div>
+<p>Franquia de mídia OOH em totem carregador. As marcas pagam pela tela, o ponto oferece de graça e o lucro é seu.</p></div>
+<div class="col"><h5>Contato</h5>
+<a href="tel:+551145226006">(11) 4522-6006</a>
+<a href="mailto:Franquia@publicarga.com.br">Franquia@publicarga.com.br</a></div>
+<div class="col"><h5>Navegação</h5>
+<a href="/">Início</a><a href="/franquia/">Franquia</a><a href="/contato/">Contato</a><a href="https://blog.publicarga.com.br">Blog</a></div>
+</div>
+<p class="flegal">Os resultados variam conforme localização, esforço de vendas e mercado, e não constituem promessa de rentabilidade. Condições completas na Circular de Oferta de Franquia (COF). © 2026 Franquia PubliCarga. CNPJ 21.904.082/0001-79. Todos os direitos reservados.</p>
+</div></footer>
+<script src="../assets/site.js"></script>
+<script src="../assets/simulador.js"></script>
+</body>
+</html>
