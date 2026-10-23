@@ -4,17 +4,62 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Franquia Publicarga | Totens carregadores com mídia indoor</title>
-<meta name="description" content="A franquia de publicidade que gera receita recorrente, sem funcionários, sem aluguel e com rápido retorno. Investimento a partir de R$ 15.990,00.">
+<meta name="description" content="A Publicarga é uma franquia de mídia indoor em totens carregadores de celular. Franquia Publicarga, parte da holding BEABA dos Negócios.">
 <meta name="robots" content="index, follow">
-<meta property="og:title" content="Franquia Publicarga | Totens carregadores com mídia indoor">
-<meta property="og:description" content="A franquia de publicidade que gera receita recorrente, sem funcionários, sem aluguel e com rápido retorno. Investimento a partir de R$ 15.990,00.">
 <meta property="og:locale" content="pt_BR">
-<meta name="theme-color" content="#000000">
+<meta name="theme-color" content="#ff7800">
 <link rel="icon" href="assets/mascote.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/quadrinhos.css">
+<style>
+  .h-hero{background:var(--brand);border-bottom:4px solid #000;padding:76px 0 96px;position:relative;overflow:hidden}
+  .h-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(#00000026 1.3px,transparent 1.5px) 0 0/16px 16px;pointer-events:none}
+  .h-hero .wrap{position:relative;z-index:1}
+  .h-hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
+  .h-hero h1{color:#000;font-size:clamp(54px,7.6vw,104px);line-height:.9}
+  .h-hero .lead{color:#1d0b00;font-weight:600}
+  .h-tag{display:inline-block;background:#000;color:#fff;font-family:var(--display);font-size:22px;letter-spacing:.06em;padding:4px 14px;border:3px solid #000;transform:rotate(-2deg);margin-bottom:26px}
+  .h-price{display:inline-block;margin-top:28px;background:#fff;border:4px solid #000;box-shadow:6px 6px 0 #000;padding:12px 20px;font-weight:700;font-size:18px}
+  .h-price b{display:block;font-family:var(--display);font-weight:400;font-size:46px;line-height:1;color:#000}
+  .h-frame{background:#fff;border:4px solid #000;border-radius:8px;box-shadow:10px 10px 0 #000;padding:28px}
+  .h-frame img{width:100%;height:auto}
+  .h-stats{background:#000;color:#fff;border-bottom:4px solid #000}
+  .h-stats .row{display:grid;grid-template-columns:repeat(4,1fr)}
+  .h-stats .cell{padding:44px 26px;border-left:2px solid #333;text-align:center}
+  .h-stats .cell:first-child{border-left:0}
+  .h-stats .num{font-family:var(--display);font-size:clamp(54px,6vw,88px);line-height:.9;color:var(--brand)}
+  .h-stats .lbl{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#d5d5d5;margin-top:8px}
+  @media(max-width:900px){.h-stats .row{grid-template-columns:1fr 1fr}.h-stats .cell:nth-child(3){border-left:0}}
+  .h-split{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}
+  .h-quote{background:#fff;border:4px solid #000;padding:30px;box-shadow:8px 8px 0 #000;font-weight:600;font-size:19px}
+  .h-quote .big{font-family:var(--display);font-size:44px;line-height:1;color:var(--brand);text-shadow:2px 2px 0 #000;margin-bottom:10px;display:block}
+  .h-orange{background:var(--brand);border-block:4px solid #000}
+  .h-orange .eyebrow{color:#000}
+  .h-orange .eyebrow::before{background:#000}
+  .h-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:50px}
+  .h-step{background:#fff;border:4px solid #000;box-shadow:7px 7px 0 #000;padding:30px;position:relative}
+  .h-step .n{font-family:var(--display);font-size:86px;line-height:.9;color:var(--brand);-webkit-text-stroke:2px #000}
+  .h-step h3{font-size:34px;margin:10px 0 10px}
+  .h-step p{color:#2b2b2b;font-size:17px}
+  @media(max-width:900px){.h-steps{grid-template-columns:1fr}}
+  .h-nums{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:46px}
+  .h-num{border-top:5px solid #000;padding-top:18px}
+  .h-num b{display:block;font-family:var(--display);font-size:88px;line-height:.9;color:#000}
+  .h-num span{font-size:18px;color:#2b2b2b}
+  .h-dark{background:#000;color:#fff;border-bottom:4px solid #000}
+  .h-dark h2{color:#fff}
+  .h-dark .lead{color:#d6d6d6}
+  .h-check{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:14px}
+  .h-check li{display:flex;gap:14px;align-items:center;font-size:19px;font-weight:600;color:#fff}
+  .h-check li::before{content:"";width:22px;height:22px;background:var(--brand);border:3px solid #000;box-shadow:0 0 0 2px var(--brand);flex:0 0 auto}
+  .h-cta{background:var(--brand);text-align:center;padding:96px 0}
+  .h-cta h2{font-size:clamp(56px,8vw,118px);color:#000;text-shadow:5px 5px 0 #fff}
+  .h-cta .big-price{font-family:var(--display);font-size:clamp(60px,9vw,130px);color:#fff;text-shadow:5px 5px 0 #000;line-height:.95;display:block;margin:10px 0}
+  .h-cta .legal{color:#000;margin-inline:auto;max-width:80ch}
+  @media(max-width:900px){.h-hero-grid,.h-split{grid-template-columns:1fr;gap:34px}.h-nums{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 <header class="site"><div class="wrap nav">
@@ -30,60 +75,83 @@
 <a href="/franquia/" class="btn">Quero ser franqueado →</a>
 </aside>
 
-<section class="hero" id="top"><div class="wrap grid">
+<section class="h-hero" id="top"><div class="wrap h-hero-grid">
   <div>
-    <span class="badge"><span class="dot"></span> +60 totens já operando pelo Brasil</span>
-    <h1>A franquia de publicidade que gera receita recorrente, sem funcionários, sem aluguel e com rápido retorno.</h1>
-    <p class="lead">Totens carregadores de celular com mídia indoor. Você instala os totens, vende tempo na tela para as marcas da sua região e recebe mensalmente.</p>
-    <div class="price">Investimento <b>a partir de R$ 15.990,00</b></div>
-    <div class="hero-ctas"><a href="/franquia/" class="btn">Quero ser franqueado <span class="arw">→</span></a>
-      <a href="#sobre" class="btn ghost">Conheça a franquia</a></div>
+    <span class="h-tag">Franquia Publicarga</span>
+    <h1>A franquia de publicidade que gera receita recorrente.</h1>
+    <p class="lead" style="margin-top:22px;max-width:56ch">Totens carregadores de celular com mídia indoor, operados por franqueados em todo o Brasil. Você instala, vende o tempo na tela e recebe mensalmente.</p>
+    <div class="h-price">Investimento inicial <b>a partir de R$ 15.990,00</b></div>
+    <div class="hero-ctas" style="margin-top:34px;display:flex;flex-wrap:wrap;gap:16px">
+      <a href="/franquia/" class="btn">Quero ser franqueado <span class="arw">→</span></a>
+      <a href="#quem-somos" class="btn ghost">Conheça a Publicarga</a>
+    </div>
   </div>
-  <div class="totem-c"><img src="assets/totens.webp" alt="Totens carregadores Publicarga com telas de mídia indoor"></div>
+  <div class="h-frame"><img src="assets/totens.webp" alt="Totens carregadores Publicarga com telas de mídia indoor"></div>
 </div></section>
 
-<section class="stats"><div class="wrap"><div class="grid">
-  <div class="stat"><div class="num">+60</div><div class="lbl">Totens em operação</div></div>
-  <div class="stat"><div class="num">+200%</div><div class="lbl">Crescimento em 2025</div></div>
-  <div class="stat"><div class="num">75%+</div><div class="lbl">Lucratividade por venda</div></div>
-</div></div></section>
-
-<section class="section" id="sobre"><div class="wrap center">
-  <span class="eyebrow">Franquia Publicarga</span>
-  <h2 class="big">Revolucionar a publicidade <span class="accent">em movimento</span>.</h2>
-  <p class="lead">Com o objetivo de revolucionar a publicidade em movimento, a Publicarga oferece a empreendedores a oportunidade de gerir um negócio de alto impacto. Entregamos uma infraestrutura completa e expertise de mercado para que nossos franqueados transformem a exposição de marcas regionais e alcancem o sucesso empresarial.</p>
-  <div class="sec-cta"><a href="/franquia/" class="btn">Seja um franqueado <span class="arw">→</span></a></div>
+<section class="h-stats"><div class="row">
+  <div class="cell"><div class="num">+60</div><div class="lbl">Totens em operação</div></div>
+  <div class="cell"><div class="num">+200%</div><div class="lbl">Crescimento em 2025</div></div>
+  <div class="cell"><div class="num">14</div><div class="lbl">Estados com presença</div></div>
+  <div class="cell"><div class="num">+200</div><div class="lbl">Franquias da holding</div></div>
 </div></section>
 
-<section class="section light"><div class="wrap">
+<section class="section" id="quem-somos"><div class="wrap h-split">
+  <div>
+    <span class="eyebrow">Quem somos</span>
+    <h2 class="big">Revolucionar a publicidade <span class="accent">em movimento</span>.</h2>
+    <p class="lead">Com o objetivo de revolucionar a publicidade em movimento, a Publicarga oferece a empreendedores a oportunidade de gerir um negócio de alto impacto. Entregamos uma infraestrutura completa e expertise de mercado para que nossos franqueados transformem a exposição de marcas regionais e alcancem o sucesso empresarial.</p>
+    <p class="lead">Trazemos o totem carregador de celular como item essencial nessa estratégia, conectando e mantendo conectados clientes e empresas de forma segmentada e inteligente.</p>
+  </div>
+  <aside class="h-quote">
+    <span class="big">Holding BEABA</span>
+    A Publicarga faz parte da Holding de Franquias BEABA dos Negócios, uma agência de publicidade que encontrou no franchising o método de crescimento das suas marcas.
+    <p style="margin-top:18px;font-size:17px;font-weight:500;color:#2b2b2b">Presente em mais de 14 estados, com 6 anos de expansão e associada à ABF (Associação Brasileira de Franchising).</p>
+  </aside>
+</div></section>
+
+<section class="section h-orange" id="como-funciona"><div class="wrap">
   <span class="eyebrow">Como funciona</span>
-  <h2 class="big">Conheça a franquia <span class="accent">e saiba como ela funciona</span>.</h2>
-  <p class="lead">A franquia Publicarga faz parte de uma das maiores agências de publicidade estratégica do Brasil, encontrando no franchising a força motriz para a sua expansão. Trazemos o totem carregador de celular como item essencial nesta estratégia, conectando e mantendo conectados clientes e empresas de forma segmentada e inteligente.</p>
-  <div class="cards cols-3">
-    <article class="card brand"><div class="ic">1</div><h3>Instale o seu totem</h3><p>Primeiro passo: captar um ponto de grande fluxo de pessoas para o seu totem.</p></article>
-    <article class="card"><div class="ic">2</div><h3>Venda anúncios</h3><p>Segundo passo: venda o tempo das telas para as empresas da sua região.</p></article>
-    <article class="card brand"><div class="ic">3</div><h3>Receba mensalmente</h3><p>Terceiro passo: receba de forma recorrente os valores dos seus anunciantes.</p></article>
-  </div>
-  <div class="sec-cta"><a href="/franquia/" class="btn">Seja um franqueado <span class="arw">→</span></a></div>
-</div></section>
-
-<section class="section"><div class="wrap center">
-  <span class="eyebrow">Por que investir em mídia externa</span>
-  <h2 class="big">Números que <span class="accent">pesam</span>.</h2>
-  <div class="cards cols-2">
-    <article class="card"><h3 class="big">89%</h3><p>da população é atingida por mídias externas, segundo a Kantar Ibope.</p></article>
-    <article class="card brand"><h3 class="big">R$ 2 bi</h3><p>foi o valor investido em mídia externa no Brasil em 2022, segundo a Cenp-Meios.</p></article>
-    <article class="card brand"><h3 class="big">69%</h3><p>das decisões de compra são tomadas diretamente no ponto de venda.</p></article>
-    <article class="card"><h3 class="big">80%</h3><p>dos empresários acreditam que a mídia OOH cria autoridade para a sua marca.</p></article>
+  <h2 class="big">Três passos para <span class="accent" style="color:#000;text-shadow:4px 4px 0 #fff">lucrar</span> com a Publicarga.</h2>
+  <div class="h-steps">
+    <article class="h-step"><div class="n">01</div><h3>Instale o seu totem</h3><p>Capte um ponto de grande fluxo de pessoas. Quanto maior o movimento, mais valiosa a sua tela.</p></article>
+    <article class="h-step"><div class="n">02</div><h3>Venda anúncios</h3><p>Venda o tempo das telas para as empresas da sua região, com materiais e treinamento da rede.</p></article>
+    <article class="h-step"><div class="n">03</div><h3>Receba mensalmente</h3><p>Os valores dos seus anunciantes entram de forma recorrente, garantindo faturamento todo mês.</p></article>
   </div>
 </div></section>
 
-<section class="section light"><div class="wrap center">
+<section class="section"><div class="wrap">
+  <span class="eyebrow">Mercado</span>
+  <h2 class="big">Por que <span class="accent">mídia externa</span>?</h2>
+  <div class="h-nums">
+    <div class="h-num"><b>89%</b><span>da população é atingida por mídias externas, segundo a Kantar Ibope.</span></div>
+    <div class="h-num"><b>R$ 2 bi</b><span>foi o valor investido em mídia externa no Brasil em 2022, segundo a Cenp-Meios.</span></div>
+    <div class="h-num"><b>69%</b><span>das decisões de compra são tomadas diretamente no ponto de venda.</span></div>
+    <div class="h-num"><b>80%</b><span>dos empresários acreditam que a mídia OOH cria autoridade para a sua marca.</span></div>
+  </div>
+</div></section>
+
+<section class="section h-dark"><div class="wrap h-split">
+  <div>
+    <span class="eyebrow">Suporte</span>
+    <h2 class="big">Você nunca estará <span class="accent">sozinho</span>.</h2>
+    <p class="lead">Em cada passo, você conta com total apoio da franqueadora e com um time de suporte qualificado, pronto para ajudar a sua operação a dar certo.</p>
+  </div>
+  <ul class="h-check">
+    <li>Treinamento completo para operar e vender</li>
+    <li>Sistema operacional próprio para gerir os totens</li>
+    <li>Materiais de venda e marketing prontos</li>
+    <li>Acompanhamento do time de expansão</li>
+  </ul>
+</div></section>
+
+<section class="h-cta"><div class="wrap center">
   <span class="eyebrow">Investimento</span>
-  <h2 class="big">Invista a partir de <span class="accent">R$ 15.990,00</span>.</h2>
-  <p class="lead">Taxa de franquia, totem pronto para operar, treinamento completo e sistema operacional próprio.</p>
-  <div class="sec-cta"><a href="/franquia/" class="btn">Quero ser franqueado <span class="arw">→</span></a></div>
-  <p class="legal">Os resultados variam conforme localização, esforço de vendas e mercado, e não constituem promessa de rentabilidade. Condições completas na Circular de Oferta de Franquia (COF).</p>
+  <h2>Invista a partir de</h2>
+  <span class="big-price">R$ 15.990,00</span>
+  <p class="lead" style="color:#000;font-weight:600">Taxa de franquia, totem pronto para operar, treinamento completo e sistema operacional próprio.</p>
+  <div class="sec-cta"><a href="/franquia/" class="btn" style="background:#000;color:#fff;border-color:#000">Quero ser franqueado <span class="arw">→</span></a></div>
+  <p class="legal" style="margin-top:26px;font-size:14px">Os resultados variam conforme localização, esforço de vendas e mercado, e não constituem promessa de rentabilidade. Condições completas na Circular de Oferta de Franquia (COF).</p>
 </div></section>
 <footer class="site"><div class="wrap">
 <div class="fgrid">
