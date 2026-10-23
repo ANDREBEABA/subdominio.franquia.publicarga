@@ -293,6 +293,33 @@
     .stat .num{font-size:44px}
     .ytf .cap{font-size:18px}
   }
+  /* simulador — estilo quadrinhos */
+  .simulador-sec{background:#fff4df;border-block:4px solid #000}
+  .pc-simulador-wrapper{max-width:900px;margin:0 auto;background:#fff;border:4px solid #000;border-radius:6px;box-shadow:10px 10px 0 #000;overflow:hidden;color:#000;font-family:var(--body)}
+  .pc-simulador-header{background:var(--brand);border-bottom:4px solid #000;padding:20px;text-align:center}
+  .pc-simulador-header h2{font-family:var(--display);font-weight:400;font-size:clamp(34px,5vw,52px);color:#000;margin:0;letter-spacing:.02em;text-transform:uppercase;text-shadow:3px 3px 0 #fff}
+  .pc-simulador-body{display:flex;flex-wrap:wrap;padding:28px;gap:36px}
+  .pc-sim-controls,.pc-sim-results{flex:1;min-width:280px}
+  .pc-control-group{margin-bottom:30px}
+  .pc-control-labels{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+  .pc-control-labels label{font-family:var(--display);font-size:20px;letter-spacing:.04em;color:#000}
+  .pc-highlight-text{font-family:var(--display);font-size:24px;color:#000;background:var(--volt);border:3px solid #000;padding:0 10px;box-shadow:3px 3px 0 #000;letter-spacing:.02em}
+  .pc-control-group input[type=range]{width:100%;accent-color:#000;height:10px;outline:none}
+  .pc-control-group small{display:block;margin-top:8px;color:#333;font-size:13px;font-weight:600}
+  .pc-result-highlight{background:var(--volt);border:4px solid #000;border-radius:6px;padding:22px;box-shadow:6px 6px 0 #000;text-align:center;margin-bottom:22px}
+  .pc-result-highlight p{font-family:var(--display);font-size:22px;letter-spacing:.04em;color:#000}
+  .pc-result-highlight h3{font-family:var(--display);font-weight:400;font-size:clamp(44px,6vw,64px);color:#000;margin:6px 0;text-shadow:3px 3px 0 #fff;line-height:1.05}
+  .pc-highlight-sub{display:flex;justify-content:space-around;gap:10px;flex-wrap:wrap;font-size:14px;color:#000;margin-top:14px;border-top:3px dashed #000;padding-top:12px;font-weight:600}
+  .pc-linha-a-linha{border:4px solid #000;border-radius:6px;box-shadow:6px 6px 0 #000;overflow:hidden;background:#fff}
+  .pc-table-header{background:#000;color:#fff;font-family:var(--display);font-size:20px;letter-spacing:.04em;padding:12px 15px;border-bottom:4px solid #000}
+  .pc-table-row{display:flex;justify-content:space-between;gap:12px;padding:12px 15px;border-bottom:3px solid #000;font-size:14px;color:#000}
+  .pc-table-row:last-child{border-bottom:none}
+  .pc-row-bold{font-weight:800}
+  .pc-text-red{color:#c00000;font-weight:800}
+  .pc-row-green{background:#eaffe9}
+  .pc-row-green span:last-child{color:#0a6b0c}
+  .pc-simulador-footer{padding:16px 24px;background:#fbe9c8;border-top:4px solid #000;font-size:12px;color:#222;line-height:1.45}
+  @media(max-width:520px){.pc-simulador-body{padding:18px;gap:24px}.pc-simulador-wrapper{box-shadow:6px 6px 0 #000}}
 </style>
 </head>
 <body>
@@ -424,6 +451,81 @@
     <p class="lead bubble">Com a rede de totens bem posicionada e as telas vendidas, esse é o potencial de faturamento anual da operação. Quer ver como chegar lá?</p>
     <div class="sec-cta"><a href="#form" class="btn">Quero esse potencial <span class="arw">→</span></a></div>
     <p class="legal">Valor ilustrativo de potencial máximo. Os resultados variam conforme localização, número de totens, esforço de vendas e mercado, e não constituem promessa de rentabilidade. Condições completas na Circular de Oferta de Franquia (COF).</p>
+  </div>
+</section>
+
+<!-- ============ SIMULADOR ============ -->
+<section class="section simulador-sec" id="simulador">
+  <div class="wrap">
+    <div class="pc-simulador-wrapper">
+        <div class="pc-simulador-header">
+            <h2>SIMULADOR PUBLICARGA</h2>
+        </div>
+
+        <div class="pc-simulador-body">
+            <div class="pc-sim-controls">
+                <div class="pc-control-group">
+                    <div class="pc-control-labels">
+                        <label>TOTENS NA SUA OPERAÇÃO</label>
+                        <span id="pc-val-totens" class="pc-highlight-text">1 totem</span>
+                    </div>
+                    <input type="range" id="pc-range-totens" min="1" max="10" value="1" step="1">
+                </div>
+
+                <div class="pc-control-group">
+                    <div class="pc-control-labels">
+                        <label>ANUNCIANTES POR TOTEM</label>
+                        <span id="pc-val-ads" class="pc-highlight-text">40 anúncios</span>
+                    </div>
+                    <input type="range" id="pc-range-ads" min="1" max="60" value="40" step="1">
+                    <small>Capacidade: de 1 a 60 anunciantes.</small>
+                </div>
+
+                <div class="pc-control-group">
+                    <div class="pc-control-labels">
+                        <label>VALOR MENSAL POR ANÚNCIO</label>
+                        <span id="pc-val-price" class="pc-highlight-text">R$ 297,00</span>
+                    </div>
+                    <input type="range" id="pc-range-price" min="97" max="500" value="297" step="1">
+                </div>
+            </div>
+
+            <div class="pc-sim-results">
+                <div class="pc-result-highlight">
+                    <p>RESULTADO LÍQUIDO ESTIMADO</p>
+                    <h3 id="pc-resultado-liquido">R$ 11.394,00</h3>
+                    <div class="pc-highlight-sub">
+                        <span>Receita bruta <b id="pc-sub-receita">R$ 11.880,00</b></span>
+                        <span>Deduções <b id="pc-sub-deducoes">- R$ 486,00</b></span>
+                    </div>
+                </div>
+
+                <div class="pc-linha-a-linha">
+                    <div class="pc-table-header">VER A CONTA LINHA A LINHA</div>
+                    <div class="pc-table-row pc-row-bold">
+                        <span>Receita Bruta</span>
+                        <span id="pc-tb-receita">R$ 11.880,00</span>
+                    </div>
+                    <div class="pc-table-row">
+                        <span>Impostos estimados (MEI)</span>
+                        <span class="pc-text-red" id="pc-tb-mei">- R$ 87,00</span>
+                    </div>
+                    <div class="pc-table-row">
+                        <span>Royalties Fixos (<span id="pc-qtd-totens-royalty">1</span>x R$ 399)</span>
+                        <span class="pc-text-red" id="pc-tb-royalties">- R$ 399,00</span>
+                    </div>
+                    <div class="pc-table-row pc-row-bold pc-row-green">
+                        <span>Royalties Variáveis</span>
+                        <span>R$ 0,00 (Não Cobramos)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pc-simulador-footer">
+            <p>Simulação com premissas abertas para o cenário que você montou. Não é promessa de faturamento nem de lucro. O resultado depende da sua atuação comercial, da região e dos pontos que você conquistar. Cálculo de impostos baseado em MEI.</p>
+        </div>
+    </div>
   </div>
 </section>
 
@@ -717,5 +819,48 @@
 
 <!-- Formulário BEABÁ JESTOR — Publicarga -->
 <script src="https://www.jestor.app.br/embed.js" async></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const rangeTotens = document.getElementById("pc-range-totens");
+        const rangeAds = document.getElementById("pc-range-ads");
+        const rangePrice = document.getElementById("pc-range-price");
+        const valTotens = document.getElementById("pc-val-totens");
+        const valAds = document.getElementById("pc-val-ads");
+        const valPrice = document.getElementById("pc-val-price");
+        const resLiquido = document.getElementById("pc-resultado-liquido");
+        const subReceita = document.getElementById("pc-sub-receita");
+        const subDeducoes = document.getElementById("pc-sub-deducoes");
+        const tbReceita = document.getElementById("pc-tb-receita");
+        const tbRoyalties = document.getElementById("pc-tb-royalties");
+        const qtdTotensRoyalty = document.getElementById("pc-qtd-totens-royalty");
+        const CUSTO_MEI = 87.00;
+        const CUSTO_ROYALTY_TOTEM = 399.00;
+        function formatMoney(value) {
+            return value.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+        }
+        function calcularSimulacao() {
+            const totens = parseInt(rangeTotens.value);
+            const ads = parseInt(rangeAds.value);
+            const price = parseFloat(rangePrice.value);
+            valTotens.innerText = totens + (totens === 1 ? " totem" : " totens");
+            valAds.innerText = ads + (ads === 1 ? " anúncio" : " anúncios");
+            valPrice.innerText = formatMoney(price);
+            const receitaBruta = totens * ads * price;
+            const royaltiesTotais = totens * CUSTO_ROYALTY_TOTEM;
+            const deducoesTotais = CUSTO_MEI + royaltiesTotais;
+            const resultadoLiquido = receitaBruta - deducoesTotais;
+            resLiquido.innerText = formatMoney(resultadoLiquido);
+            subReceita.innerText = formatMoney(receitaBruta);
+            subDeducoes.innerText = "- " + formatMoney(deducoesTotais);
+            tbReceita.innerText = formatMoney(receitaBruta);
+            qtdTotensRoyalty.innerText = totens;
+            tbRoyalties.innerText = "- " + formatMoney(royaltiesTotais);
+        }
+        rangeTotens.addEventListener("input", calcularSimulacao);
+        rangeAds.addEventListener("input", calcularSimulacao);
+        rangePrice.addEventListener("input", calcularSimulacao);
+        calcularSimulacao();
+    });
+</script>
 </body>
 </html>
