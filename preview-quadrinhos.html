@@ -106,10 +106,10 @@
   /* hero */
   .hero{position:relative;overflow:hidden;padding-block:70px 96px}
   .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(#000 1.6px,transparent 1.8px) 0 0/14px 14px;opacity:.12;-webkit-mask-image:linear-gradient(180deg,#000 10%,transparent 85%);mask-image:linear-gradient(180deg,#000 10%,transparent 85%);z-index:0;pointer-events:none}
-  .hero .grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1.05fr;gap:44px;align-items:center}
+  .hero .grid{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
   .badge{display:inline-flex;align-items:center;gap:9px;padding:8px 14px;border:3px solid #000;border-radius:var(--r);font-weight:800;font-size:13px;text-transform:uppercase;color:#000;background:var(--volt);box-shadow:var(--shadow-sm);margin-bottom:24px;transform:rotate(-1.5deg)}
   .badge .dot{width:10px;height:10px;border-radius:50%;background:#000}
-  .hero h1{font-size:clamp(50px,8.4vw,98px);text-shadow:none}
+  .hero h1{font-size:clamp(44px,6.4vw,84px);line-height:1.02;text-shadow:none}
   .hero h1 .hl{font-size:inherit;text-shadow:none}
   .hero .lead{margin-top:24px}
   .price{margin-top:30px;padding:16px 20px;border:4px solid #000;border-radius:var(--r);background:#fff;font-weight:700;color:#000;font-size:15px;box-shadow:var(--shadow-sm)}
@@ -123,7 +123,7 @@
   .hero-trust b{font-weight:800}
   .totem-c{display:flex;justify-content:center;align-items:center;position:relative}
   .totem-c::before{content:"";position:absolute;width:94%;height:88%;border-radius:var(--r-lg);background:radial-gradient(circle at 20% 20%,#fff 0 8%,transparent 9%) 0 0/22px 22px,linear-gradient(160deg,#ffb066,#ff7800 55%,#ffd23f);border:4px solid #000;box-shadow:var(--shadow);transform:rotate(-2deg);z-index:0}
-  .totem-c img{position:relative;z-index:1;width:min(640px,108%);height:auto;filter:drop-shadow(10px 10px 0 #000)}
+  .totem-c img{position:relative;z-index:1;width:min(500px,100%);height:auto;filter:drop-shadow(10px 10px 0 #000)}
 
   /* faixa de números */
   .stats{background:var(--brand);border-block:4px solid #000}
@@ -270,10 +270,10 @@
     .section{padding-block:64px}
     .hero{padding-block:36px 56px}
     .hero .grid{grid-template-columns:1fr;gap:34px}
-    .hero h1{font-size:clamp(42px,12vw,60px)}
+    .hero h1{font-size:clamp(40px,11vw,58px)}
     h2.big{font-size:clamp(36px,10.5vw,50px)}
     .lead{font-size:16px}
-    .totem-c img{width:min(480px,96%)}
+    .totem-c img{width:min(400px,92%)}
     .totem-c::before{width:98%;height:84%}
     .hero-ctas{flex-direction:column;align-items:stretch}
     .hero-ctas .btn,.sec-cta .btn{width:100%}
