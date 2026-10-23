@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Obrigado | Franquia Publicarga</title>
+<meta name="description" content="Cadastro recebido. Em instantes você será direcionado para receber a apresentação.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Obrigado | Franquia Publicarga">
+<meta property="og:description" content="Cadastro recebido. Em instantes você será direcionado para receber a apresentação.">
+<meta property="og:locale" content="pt_BR">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="../assets/mascote.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/quadrinhos.css">
+</head>
+<body>
+<header class="site"><div class="wrap nav">
+<a href="/franquia/" class="brand" aria-label="Publicarga"><img src="../assets/logo-branca.png" alt="Publicarga" style="height:44px;width:auto"></a>
+<div class="nav-cta"><a href="#form" class="btn">Quero ser franqueado <span class="arw">→</span></a></div>
+</div></header>
+
+<section class="section page-hero"><div class="wrap center">
+  <span class="eyebrow">Cadastro recebido</span>
+  <h2 class="big">Parabéns pelo <span class="accent">cadastro</span>!</h2>
+  <p class="lead">Esse é o seu primeiro passo para empreender com um <strong>negócio altamente lucrativo</strong>.</p>
+  <p class="lead">Você receberá o contato de um consultor de expansão que te ajudará nos próximos passos para você se tornar um franqueado(a) de sucesso.</p>
+  <div class="obrigado-box">
+    <p><strong>Mas aproveite e solicite a sua apresentação imediatamente!</strong></p>
+    <p style="margin-top:18px;font-weight:700">Você será redirecionado para o WhatsApp em:</p>
+    <div class="timer" id="timer">5</div>
+    <div class="progress"><span></span><b>Pronto para ser um Franqueado(a) · 86%</b></div>
+    <a id="btn-redirect" class="btn" href="https://wa.me/551132301685?text=Me%20cadastrei%20pelo%20site%20e%20quero%20receber%20a%20apresenta%C3%A7%C3%A3o." style="margin-top:14px">Receber a apresentação agora <span class="arw">→</span></a>
+  </div>
+</div></section>
+<script>
+(function () {
+  var t = 5, el = document.getElementById('timer');
+  var url = document.getElementById('btn-redirect').href;
+  var i = setInterval(function () {
+    t--; el.textContent = t;
+    if (t <= 0) { clearInterval(i); window.location.href = url; }
+  }, 1000);
+})();
+</script>
+<footer class="site"><div class="wrap">
+<div class="fgrid">
+<div><div class="brand"><img src="../assets/logo-branca.png" alt="Publicarga" style="height:60px;width:auto"></div>
+<p>Franquia de mídia OOH em totem carregador. As marcas pagam pela tela, o ponto oferece de graça e o lucro é seu.</p></div>
+<div class="col"><h5>Contato</h5>
+<a href="tel:+551145226006">(11) 4522-6006</a>
+<a href="mailto:Franquia@publicarga.com.br">Franquia@publicarga.com.br</a></div>
+
+</div>
+<p class="flegal">Os resultados variam conforme localização, esforço de vendas e mercado, e não constituem promessa de rentabilidade. Condições completas na Circular de Oferta de Franquia (COF). © 2026 Franquia PubliCarga. CNPJ 21.904.082/0001-79. Todos os direitos reservados.</p>
+</div></footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>
